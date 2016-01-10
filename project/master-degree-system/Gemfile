@@ -36,6 +36,7 @@ gem 'devise'
 gem 'pry'
 gem 'haml'
 gem "haml-rails",'~> 0.9'
+gem 'ransack'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

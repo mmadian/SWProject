@@ -16,20 +16,20 @@
       %th
   %thead
     %tr
-    = form_tag request.url,method: :get do
-      %div{style: "display: block"}
+    = search_form_for @search, url: request.url, method: :get do |f|
+      %div
         %label
           Semester
         %li
-          = select_tag '',options_from_collection_for_select(Semester.all, "id", "semesterName")
+          = f.select :semester_semesterName_cont, Semester.all.map{|s| [s.semesterName,s.semesterName]}
         %label
           Year
         %li
-          = text_field_tag nil,nil
+          = f.text_field :year_eq
         %li
-          = submit_tag 'Search'
+          = f.submit 'Search'
   %tbody
-    - ProgramClassSemesterCourse.all.each do |program_class_semester_course|
+    - @program_class_semester_course.each do |program_class_semester_course|
       %tr
         %td= program_class_semester_course.ProgramClass.try(:name)
         %td= program_class_semester_course.semester.try(:semesterName)

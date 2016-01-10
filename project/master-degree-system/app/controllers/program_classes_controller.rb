@@ -9,6 +9,10 @@ class ProgramClassesController < ApplicationController
   end
 
   def show
+    # binding.pry
+    params[:q] ||= {}
+    @search = ProgramClassSemesterCourse.search(params[:q])
+    @program_class_semester_course = @search.result
     respond_with(@program_class)
   end
 

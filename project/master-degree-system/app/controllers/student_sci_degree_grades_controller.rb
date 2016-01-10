@@ -42,6 +42,6 @@ class StudentSciDegreeGradesController < ApplicationController
     end
 
     def student_sci_degree_grade_params
-      params.require(:student_sci_degree_grade).permit(:studentSciDegree_id, :year, :grade, :creator_id, :modifier_id)
+      params.require(:student_sci_degree_grade).permit(:studentSciDegree_id, :name, :year, :grade, :creator_id, :modifier_id)
     end
 end

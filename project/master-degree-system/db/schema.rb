@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109202118) do
+ActiveRecord::Schema.define(version: 20160110211229) do
 
   create_table "course_classes", force: true do |t|
     t.string   "courseClassName"
@@ -350,6 +350,7 @@ ActiveRecord::Schema.define(version: 20160109202118) do
     t.integer  "modifier_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "student_sci_degree_grades", ["creator_id"], name: "index_student_sci_degree_grades_on_creator_id", using: :btree

@@ -8,9 +8,11 @@
         - @student_sci_degree_grade.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :studentSciDegree
+    = f.hidden_field :studentSciDegree_id, value: params["student_sci_degree_id"]
+  .field
+    = f.label :name
     %br/
-    = f.text_field :studentSciDegree
+    = f.text_field :name
   .field
     = f.label :year
     %br/
@@ -19,13 +21,5 @@
     = f.label :grade
     %br/
     = f.text_field :grade
-  .field
-    = f.label :creator
-    %br/
-    = f.text_field :creator
-  .field
-    = f.label :modifier
-    %br/
-    = f.text_field :modifier
   .actions
     = f.submit

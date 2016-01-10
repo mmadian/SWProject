@@ -9,6 +9,7 @@ class StudentSciDegreesController < ApplicationController
   end
 
   def show
+    @student_sci_degree_grades = StudentSciDegreeGrade.where(studentSciDegree_id: @student_sci_degree.id)
     respond_with(@student_sci_degree)
   end
 

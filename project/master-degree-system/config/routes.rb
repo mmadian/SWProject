@@ -3,7 +3,9 @@ MasterDegreeSystem::Application.routes.draw do
   
   resources :student_sci_degree_grades
 
-  resources :student_sci_degrees
+  resources :student_sci_degrees do
+    resources :student_sci_degree_grades
+  end
 
   resources :sci_degree_classes
 

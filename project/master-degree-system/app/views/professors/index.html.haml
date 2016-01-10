@@ -1,23 +1,25 @@
 %h1 Listing professors
-%table
+%table.table
   %thead
     %tr
-      %th User
-      %th Professortitle
-      %th Creator
-      %th Modifier
+      %th National ID
+      %th Name
+      %th Mobilenumber
+      %th Phonenumber
+      %th Email
       %th
       %th
       %th
   %tbody
     - @professors.each do |professor|
       %tr
-        %td= professor.user
-        %td= professor.professorTitle
-        %td= professor.creator
-        %td= professor.modifier
+        %td= professor.nationalID
+        %td= professor.name
+        %td= professor.mobileNumber
+        %td= professor.phoneNumber
+        %td= professor.email
         %td= link_to 'Show', professor
-        %td= link_to 'Edit', edit_professor_path(professor)
+        %td= link_to 'Edit', edit_user_path(professor)
         %td= link_to 'Destroy', professor, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Professor', new_professor_path
+= link_to 'New Professor', new_user_path

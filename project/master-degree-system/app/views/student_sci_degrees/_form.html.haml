@@ -10,42 +10,34 @@
   .field
     = f.label :SciDegreeClass
     %br/
-    = f.text_field :SciDegreeClass
+    = f.select :SciDegreeClass_id, SciDegreeClass.all.map{|sc| [sc.name, sc.id]}
   .field
     = f.label :student
     %br/
-    = f.text_field :student
+    = f.select :student_id, User.where(id: Student.all.pluck(:user_id)).map{|s| [s.name, s.id]}
   .field
     = f.label :university
     %br/
-    = f.text_field :university
+    = f.select :university_id, University.all.map{|u| [u.name, u.id]}
   .field
     = f.label :faculty
     %br/
-    = f.text_field :faculty
+    = f.select :faculty_id, Faculty.all.map{|u| [u.name, u.id]}
   .field
     = f.label :department
     %br/
-    = f.text_field :department
+    = f.select :department_id, Department.all.map{|u| [u.name, u.id]}
   .field
-    = f.label :graduationYear
+    = f.label :graduationYear, 'Graduation Year'
     %br/
     = f.number_field :graduationYear
   .field
-    = f.label :fieldOfResearch
+    = f.label :fieldOfResearch, 'Field Of Research'
     %br/
     = f.text_field :fieldOfResearch
   .field
-    = f.label :gpa
+    = f.label :gpa, 'GPA'
     %br/
     = f.text_field :gpa
-  .field
-    = f.label :creator
-    %br/
-    = f.text_field :creator
-  .field
-    = f.label :modifier
-    %br/
-    = f.text_field :modifier
   .actions
     = f.submit

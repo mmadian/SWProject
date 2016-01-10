@@ -1,13 +1,29 @@
 %p#notice= notice
 %p
-  %strong User:
-  = @student.user
+  %strong National ID:
+  = @student.nationalID
 %p
-  %strong Creator:
-  = @student.creator
+  %strong Name:
+  = @student.name
 %p
-  %strong Modifier:
-  = @student.modifier
+  %strong Image url:
+  = @student.imageURL
+%p
+  %strong Mobile number:
+  = @student.mobileNumber
+%p
+  %strong Phone number:
+  = @student.phoneNumber
+%p
+  %strong Email:
+  = @student.email
+
+%p
 = link_to 'Edit', edit_student_path(@student)
 |
 = link_to 'Back', students_path
+
+%hr
+= render 'student_sci_degrees/index'
+%hr
+= render 'student_programs/index'

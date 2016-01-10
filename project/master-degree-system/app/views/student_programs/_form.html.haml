@@ -10,11 +10,11 @@
   .field
     = f.label :student
     %br/
-    = f.select :student, Student.all.map{|s| [s.email,s.id]}
+    = f.select :student_id, User.where(id: Student.all.pluck(:user_id)).map{|s| [s.name,s.id]}
   .field
     = f.label :Program_Class
     %br/
-    = f.select :ProgramClass, ProgramClass.all.map{|pc| [pc.name,pc.id]}
+    = f.select :ProgramClass_id, ProgramClass.all.map{|pc| [pc.name,pc.id]}
   .field
     = f.label :finished_Toefl
     %br/

@@ -4,11 +4,13 @@ class StudentsController < ApplicationController
   respond_to :html
 
   def index
-    @students = Student.all
+    @students = User.where(id: Student.all.pluck(:user_id))
     respond_with(@students)
   end
 
   def show
+    @student_sci_degrees = StudentSciDegree.all
+    @student_programs = StudentProgram.all
     respond_with(@student)
   end
 
@@ -38,7 +40,7 @@ class StudentsController < ApplicationController
 
   private
     def set_student
-      @student = Student.find(params[:id])
+      @student = User.find(params[:id])
     end
 
     def student_params

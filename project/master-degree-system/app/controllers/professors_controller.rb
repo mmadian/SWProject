@@ -4,7 +4,7 @@ class ProfessorsController < ApplicationController
   respond_to :html
 
   def index
-    @professors = Professor.all
+    @professors = User.where(id: Professor.all.pluck(:user_id))
     respond_with(@professors)
   end
 

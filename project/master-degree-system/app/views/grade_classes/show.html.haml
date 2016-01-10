@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @grade_class.name
+%p
+  %strong Creator:
+  = @grade_class.creator
+%p
+  %strong Modifier:
+  = @grade_class.modifier
+= link_to 'Edit', edit_grade_class_path(@grade_class)
+|
+= link_to 'Back', grade_classes_path

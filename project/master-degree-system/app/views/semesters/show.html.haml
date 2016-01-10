@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Semestername:
+  = @semester.semesterName
+%p
+  %strong Creator:
+  = @semester.creator
+%p
+  %strong Modifier:
+  = @semester.modifier
+= link_to 'Edit', edit_semester_path(@semester)
+|
+= link_to 'Back', semesters_path

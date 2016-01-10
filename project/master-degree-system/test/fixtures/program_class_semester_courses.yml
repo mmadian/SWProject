@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  specificCourseName: MyString
+  minimamNumberOfStudent: 1
+  course_id: 
+  semester_id: 
+  CourseClass_id: 
+  ProgramClass_id: 
+  year: 1
+  directedReading: false
+  courseCode: MyString
+  creator_id: 
+  modifier_id: 
+
+two:
+  specificCourseName: MyString
+  minimamNumberOfStudent: 1
+  course_id: 
+  semester_id: 
+  CourseClass_id: 
+  ProgramClass_id: 
+  year: 1
+  directedReading: false
+  courseCode: MyString
+  creator_id: 
+  modifier_id: 

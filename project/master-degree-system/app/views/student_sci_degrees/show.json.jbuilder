@@ -1,0 +1,1 @@
+json.extract! @student_sci_degree, :id, :SciDegreeClass_id, :student_id, :university_id, :faculty_id, :department_id, :graduationYear, :fieldOfResearch, :gpa, :creator_id, :modifier_id, :created_at, :updated_at

@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Studentprogram:
+  = @student_program_warning_history.studentProgram
+%p
+  %strong Warning:
+  = @student_program_warning_history.warning
+%p
+  %strong Date:
+  = @student_program_warning_history.date
+%p
+  %strong Creator:
+  = @student_program_warning_history.creator
+%p
+  %strong Modifier:
+  = @student_program_warning_history.modifier
+= link_to 'Edit', edit_student_program_warning_history_path(@student_program_warning_history)
+|
+= link_to 'Back', student_program_warning_histories_path

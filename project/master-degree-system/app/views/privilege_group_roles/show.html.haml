@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Privilegegroup:
+  = @privilege_group_role.privilegeGroup
+%p
+  %strong Role:
+  = @privilege_group_role.role
+%p
+  %strong Creator:
+  = @privilege_group_role.creator
+%p
+  %strong Modifier:
+  = @privilege_group_role.modifier
+= link_to 'Edit', edit_privilege_group_role_path(@privilege_group_role)
+|
+= link_to 'Back', privilege_group_roles_path

@@ -1,0 +1,2 @@
+module ProfessorTitlesHelper
+end

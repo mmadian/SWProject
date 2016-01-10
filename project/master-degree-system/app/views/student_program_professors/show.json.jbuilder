@@ -1,0 +1,1 @@
+json.extract! @student_program_professor, :id, :studentProgram_id, :professor_id, :isPrimary, :isDefenseCommitee, :comment, :additionDate, :isAccepted, :acceptanceDate, :isExternal, :hasReceivedIndivdualReport, :hasReceivedCollectiveReport, :hasReceivedSatisfactionReport, :isCommitteeHead, :creator_id, :modifier_id, :created_at, :updated_at

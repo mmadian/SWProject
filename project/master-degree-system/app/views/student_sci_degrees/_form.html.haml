@@ -1,0 +1,51 @@
+= form_for(@student_sci_degree) do |f|
+  - if @student_sci_degree.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@student_sci_degree.errors.count, "error")
+        prohibited this student_sci_degree from being saved:
+      %ul
+        - @student_sci_degree.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :SciDegreeClass
+    %br/
+    = f.text_field :SciDegreeClass
+  .field
+    = f.label :student
+    %br/
+    = f.text_field :student
+  .field
+    = f.label :university
+    %br/
+    = f.text_field :university
+  .field
+    = f.label :faculty
+    %br/
+    = f.text_field :faculty
+  .field
+    = f.label :department
+    %br/
+    = f.text_field :department
+  .field
+    = f.label :graduationYear
+    %br/
+    = f.number_field :graduationYear
+  .field
+    = f.label :fieldOfResearch
+    %br/
+    = f.text_field :fieldOfResearch
+  .field
+    = f.label :gpa
+    %br/
+    = f.text_field :gpa
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

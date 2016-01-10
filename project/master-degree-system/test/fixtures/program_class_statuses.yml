@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  programClass_id: 
+  preProgramClass_id: 
+  status: MyString
+  creator_id: 
+  modifier_id: 
+
+two:
+  programClass_id: 
+  preProgramClass_id: 
+  status: MyString
+  creator_id: 
+  modifier_id: 

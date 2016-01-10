@@ -1,0 +1,84 @@
+= form_for(@program_class_semester_course) do |f|
+  - if @program_class_semester_course.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@program_class_semester_course.errors.count, "error")
+        prohibited this program_class_semester_course from being saved:
+      %ul
+        - @program_class_semester_course.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :ProgramClass, 'Program'
+    %br/
+    = f.select :ProgramClass_id,ProgramClass.where(name: params[:program_class]).map{|s| [s.name,s.id]}
+  .field
+    = f.label :semester
+    %br/
+    = f.select :semester_id, Semester.all.map{|s| [s.semesterName,s.id]}
+  .field
+    = f.label :year
+    %br/
+    = f.number_field :year,value: Date.today.year
+  .field
+    = f.label :CourseClass, 'Course Class' 
+    %br/
+    = f.select :CourseClass_id, CourseClass.all.map{|s| [s.courseClassName,s.id]}
+  .field
+    = f.label :course
+    %br/
+    = f.select :course_id, Course.all.map{|c| [c.CourseName,c.id]}, prompt: "Please Select"
+  .field
+    = f.label :specific_Course_Name
+    %br/
+    = f.text_field :specificCourseName
+  .field
+    = f.label :courseCode, 'Course Code'
+    %br/
+    = f.text_field :courseCode
+  .field
+    = f.label :min_number_of_student
+    %br/
+    = f.text_field :min_number_of_student
+  .field
+    = f.label :credit_hours
+    %br/
+    = f.text_field :credit_hours
+  .field
+    = f.label :total_grade
+    %br/
+    = f.text_field :total_grade
+  .field
+    = f.label :directedReading,'Directed Reading'
+    %br/
+    = f.check_box :directedReading
+  .field
+    = label_tag :professor
+    %br/
+    / - binding.pry
+    = select_tag 'professor[]', options_from_collection_for_select(User.where(id: Professor.all.pluck(:user_id)).all,'id','name'),multiple: :multiple
+  .field.hidden
+    = f.hidden_field :creator
+  .field.hidden
+    = f.hidden_field :modifier
+  .actions
+    = f.submit
+
+
+:javascript
+  $('#program_class_semester_course_course_id').on("change",function(){
+    $.ajax({
+        url: '/courses/'+$('#program_class_semester_course_course_id').val(),
+        data: {},
+        dataType: 'json',
+        success: function(data) {
+          $('#program_class_semester_course_specificCourseName').val(data.CourseName);
+          $('#program_class_semester_course_courseCode').val(data.courseCode);
+          $('#program_class_semester_course_credit_hours').val(data.credit_hours);
+          $('#program_class_semester_course_total_grade').val(data.total_grade);
+          $('#program_class_semester_course_min_number_of_student').val(data.min_number_of_student);
+        },
+        fail: function(data) {
+          alert('Invalid data');
+        }
+      });
+  })

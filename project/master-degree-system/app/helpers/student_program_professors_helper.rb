@@ -1,0 +1,2 @@
+module StudentProgramProfessorsHelper
+end

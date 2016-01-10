@@ -1,0 +1,1 @@
+json.extract! @student_program_course, :id, :programClassSemesterCourse_id, :studentProgram_id, :gradeClass_id, :subscriptionDate, :gradeValue, :isComplementaryCourse, :creator_id, :modifier_id, :created_at, :updated_at

@@ -1,0 +1,35 @@
+%h1 Listing student_sci_degrees
+%table
+  %thead
+    %tr
+      %th Scidegreeclass
+      %th Student
+      %th University
+      %th Faculty
+      %th Department
+      %th Graduationyear
+      %th Fieldofresearch
+      %th Gpa
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @student_sci_degrees.each do |student_sci_degree|
+      %tr
+        %td= student_sci_degree.SciDegreeClass
+        %td= student_sci_degree.student
+        %td= student_sci_degree.university
+        %td= student_sci_degree.faculty
+        %td= student_sci_degree.department
+        %td= student_sci_degree.graduationYear
+        %td= student_sci_degree.fieldOfResearch
+        %td= student_sci_degree.gpa
+        %td= student_sci_degree.creator
+        %td= student_sci_degree.modifier
+        %td= link_to 'Show', student_sci_degree
+        %td= link_to 'Edit', edit_student_sci_degree_path(student_sci_degree)
+        %td= link_to 'Destroy', student_sci_degree, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student sci degree', new_student_sci_degree_path

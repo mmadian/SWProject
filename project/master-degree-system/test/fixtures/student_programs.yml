@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  student_id: 
+  ProgramClass_id: 
+  finishedToefl: false
+  toeflDate: 2015-12-07
+  hasResearchPoint: false
+  puplishedAPaper: false
+  programStartDate: 2015-12-07
+  isVTMENAprogram: false
+  creator_id: 
+  modifier_id: 
+
+two:
+  student_id: 
+  ProgramClass_id: 
+  finishedToefl: false
+  toeflDate: 2015-12-07
+  hasResearchPoint: false
+  puplishedAPaper: false
+  programStartDate: 2015-12-07
+  isVTMENAprogram: false
+  creator_id: 
+  modifier_id: 

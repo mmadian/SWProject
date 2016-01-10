@@ -1,0 +1,27 @@
+= form_for(@professor) do |f|
+  - if @professor.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@professor.errors.count, "error")
+        prohibited this professor from being saved:
+      %ul
+        - @professor.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :user
+    %br/
+    = f.text_field :user
+  .field
+    = f.label :professorTitle
+    %br/
+    = f.text_field :professorTitle
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

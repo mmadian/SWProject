@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  studentProgram_id: 
+  professor_id: 
+  isPrimary: false
+  isDefenseCommitee: false
+  comment: MyText
+  additionDate: 2015-12-07
+  isAccepted: false
+  acceptanceDate: 2015-12-07
+  isExternal: false
+  hasReceivedIndivdualReport: false
+  hasReceivedCollectiveReport: false
+  hasReceivedSatisfactionReport: false
+  isCommitteeHead: false
+  creator_id: 
+  modifier_id: 
+
+two:
+  studentProgram_id: 
+  professor_id: 
+  isPrimary: false
+  isDefenseCommitee: false
+  comment: MyText
+  additionDate: 2015-12-07
+  isAccepted: false
+  acceptanceDate: 2015-12-07
+  isExternal: false
+  hasReceivedIndivdualReport: false
+  hasReceivedCollectiveReport: false
+  hasReceivedSatisfactionReport: false
+  isCommitteeHead: false
+  creator_id: 
+  modifier_id: 

@@ -1,0 +1,31 @@
+= form_for(@student_program_warning_history) do |f|
+  - if @student_program_warning_history.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@student_program_warning_history.errors.count, "error")
+        prohibited this student_program_warning_history from being saved:
+      %ul
+        - @student_program_warning_history.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :studentProgram
+    %br/
+    = f.text_field :studentProgram
+  .field
+    = f.label :warning
+    %br/
+    = f.text_area :warning
+  .field
+    = f.label :date
+    %br/
+    = f.date_select :date
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

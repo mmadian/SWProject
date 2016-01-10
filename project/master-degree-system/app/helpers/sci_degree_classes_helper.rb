@@ -1,0 +1,2 @@
+module SciDegreeClassesHelper
+end

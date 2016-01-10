@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  SciDegreeClass_id: 
+  student_id: 
+  university_id: 
+  faculty_id: 
+  department_id: 
+  graduationYear: 1
+  fieldOfResearch: MyString
+  gpa: 1.5
+  creator_id: 
+  modifier_id: 
+
+two:
+  SciDegreeClass_id: 
+  student_id: 
+  university_id: 
+  faculty_id: 
+  department_id: 
+  graduationYear: 1
+  fieldOfResearch: MyString
+  gpa: 1.5
+  creator_id: 
+  modifier_id: 

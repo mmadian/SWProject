@@ -1,0 +1,24 @@
+%h1 Program Classes
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Duration
+      %th Extensionperiod
+      %th Numberofcourses
+      %th
+      %th
+      %th
+  %tbody
+    - @program_classes.each do |program_class|
+      %tr
+        %td= program_class.name
+        %td= program_class.duration
+        %td= program_class.extensionPeriod
+        %td= program_class.numberOfCourses
+        %td= link_to 'Show', program_class
+        %td= link_to 'Edit', edit_program_class_path(program_class)
+        %td= link_to 'Destroy', program_class, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+%div{style: "float: right;padding-right: 38px;"}
+  = link_to 'Add', new_program_class_path

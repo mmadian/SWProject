@@ -1,0 +1,35 @@
+%h1 Listing users
+%table
+  %thead
+    %tr
+      %th Usertype
+      %th Nationalid
+      %th Name
+      %th Imageurl
+      %th Mobilenumber
+      %th Phonenumber
+      %th Email
+      %th Password
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.userType
+        %td= user.nationalID
+        %td= user.name
+        %td= user.imageURL
+        %td= user.mobileNumber
+        %td= user.phoneNumber
+        %td= user.email
+        %td= user.password
+        %td= user.creator
+        %td= user.modifier
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New User', new_user_path

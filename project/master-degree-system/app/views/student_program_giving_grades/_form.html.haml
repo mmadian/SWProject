@@ -1,0 +1,63 @@
+= form_for(@student_program_giving_grade) do |f|
+  - if @student_program_giving_grade.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@student_program_giving_grade.errors.count, "error")
+        prohibited this student_program_giving_grade from being saved:
+      %ul
+        - @student_program_giving_grade.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :studentProgram
+    %br/
+    = f.text_field :studentProgram
+  .field
+    = f.label :seminarDate
+    %br/
+    = f.date_select :seminarDate
+  .field
+    = f.label :hasThesisTitle
+    %br/
+    = f.check_box :hasThesisTitle
+  .field
+    = f.label :finalReportOnGoodnessOfThesis
+    %br/
+    = f.check_box :finalReportOnGoodnessOfThesis
+  .field
+    = f.label :refereeMakingSuggestion
+    %br/
+    = f.check_box :refereeMakingSuggestion
+  .field
+    = f.label :refreeComitteeMade
+    %br/
+    = f.check_box :refreeComitteeMade
+  .field
+    = f.label :thesisTitleArabic
+    %br/
+    = f.text_field :thesisTitleArabic
+  .field
+    = f.label :thiesisTitleEnglish
+    %br/
+    = f.text_field :thiesisTitleEnglish
+  .field
+    = f.label :thesisGeneralField
+    %br/
+    = f.text_field :thesisGeneralField
+  .field
+    = f.label :thesisSpecificField
+    %br/
+    = f.text_field :thesisSpecificField
+  .field
+    = f.label :thesisAbstract
+    %br/
+    = f.check_box :thesisAbstract
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

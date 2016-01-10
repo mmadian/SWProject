@@ -1,0 +1,21 @@
+%h1 Listing user_types
+%table
+  %thead
+    %tr
+      %th Name
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @user_types.each do |user_type|
+      %tr
+        %td= user_type.name
+        %td= user_type.creator
+        %td= user_type.modifier
+        %td= link_to 'Show', user_type
+        %td= link_to 'Edit', edit_user_type_path(user_type)
+        %td= link_to 'Destroy', user_type, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New User type', new_user_type_path

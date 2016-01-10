@@ -1,0 +1,31 @@
+= form_for(@program_class_status) do |f|
+  - if @program_class_status.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@program_class_status.errors.count, "error")
+        prohibited this program_class_status from being saved:
+      %ul
+        - @program_class_status.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :programClass
+    %br/
+    = f.text_field :programClass
+  .field
+    = f.label :preProgramClass
+    %br/
+    = f.text_field :preProgramClass
+  .field
+    = f.label :status
+    %br/
+    = f.text_field :status
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

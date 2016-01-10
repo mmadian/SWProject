@@ -1,0 +1,31 @@
+= form_for(@user_privilege_group_role) do |f|
+  - if @user_privilege_group_role.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user_privilege_group_role.errors.count, "error")
+        prohibited this user_privilege_group_role from being saved:
+      %ul
+        - @user_privilege_group_role.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :user
+    %br/
+    = f.text_field :user
+  .field
+    = f.label :privilegeGroupRole
+    %br/
+    = f.text_field :privilegeGroupRole
+  .field
+    = f.label :role
+    %br/
+    = f.text_field :role
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

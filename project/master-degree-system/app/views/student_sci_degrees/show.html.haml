@@ -1,0 +1,34 @@
+%p#notice= notice
+%p
+  %strong Scidegreeclass:
+  = @student_sci_degree.SciDegreeClass
+%p
+  %strong Student:
+  = @student_sci_degree.student
+%p
+  %strong University:
+  = @student_sci_degree.university
+%p
+  %strong Faculty:
+  = @student_sci_degree.faculty
+%p
+  %strong Department:
+  = @student_sci_degree.department
+%p
+  %strong Graduationyear:
+  = @student_sci_degree.graduationYear
+%p
+  %strong Fieldofresearch:
+  = @student_sci_degree.fieldOfResearch
+%p
+  %strong Gpa:
+  = @student_sci_degree.gpa
+%p
+  %strong Creator:
+  = @student_sci_degree.creator
+%p
+  %strong Modifier:
+  = @student_sci_degree.modifier
+= link_to 'Edit', edit_student_sci_degree_path(@student_sci_degree)
+|
+= link_to 'Back', student_sci_degrees_path

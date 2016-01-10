@@ -1,0 +1,49 @@
+%p#notice= notice
+%p
+  %strong Studentprogram:
+  = @student_program_professor.studentProgram
+%p
+  %strong Professor:
+  = @student_program_professor.professor
+%p
+  %strong Isprimary:
+  = @student_program_professor.isPrimary
+%p
+  %strong Isdefensecommitee:
+  = @student_program_professor.isDefenseCommitee
+%p
+  %strong Comment:
+  = @student_program_professor.comment
+%p
+  %strong Additiondate:
+  = @student_program_professor.additionDate
+%p
+  %strong Isaccepted:
+  = @student_program_professor.isAccepted
+%p
+  %strong Acceptancedate:
+  = @student_program_professor.acceptanceDate
+%p
+  %strong Isexternal:
+  = @student_program_professor.isExternal
+%p
+  %strong Hasreceivedindivdualreport:
+  = @student_program_professor.hasReceivedIndivdualReport
+%p
+  %strong Hasreceivedcollectivereport:
+  = @student_program_professor.hasReceivedCollectiveReport
+%p
+  %strong Hasreceivedsatisfactionreport:
+  = @student_program_professor.hasReceivedSatisfactionReport
+%p
+  %strong Iscommitteehead:
+  = @student_program_professor.isCommitteeHead
+%p
+  %strong Creator:
+  = @student_program_professor.creator
+%p
+  %strong Modifier:
+  = @student_program_professor.modifier
+= link_to 'Edit', edit_student_program_professor_path(@student_program_professor)
+|
+= link_to 'Back', student_program_professors_path

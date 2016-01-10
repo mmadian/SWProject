@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  studentSciDegree_id: 
+  year: 1
+  grade: 1.5
+  creator_id: 
+  modifier_id: 
+
+two:
+  studentSciDegree_id: 
+  year: 1
+  grade: 1.5
+  creator_id: 
+  modifier_id: 

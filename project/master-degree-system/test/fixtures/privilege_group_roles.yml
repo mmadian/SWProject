@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  privilegeGroup_id: 
+  role_id: 
+  creator_id: 
+  modifier_id: 
+
+two:
+  privilegeGroup_id: 
+  role_id: 
+  creator_id: 
+  modifier_id: 

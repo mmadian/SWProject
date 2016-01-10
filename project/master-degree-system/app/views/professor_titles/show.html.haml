@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @professor_title.name
+%p
+  %strong Date:
+  = @professor_title.date
+%p
+  %strong Creator:
+  = @professor_title.creator
+%p
+  %strong Modifier:
+  = @professor_title.modifier
+= link_to 'Edit', edit_professor_title_path(@professor_title)
+|
+= link_to 'Back', professor_titles_path

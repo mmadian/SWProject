@@ -1,0 +1,41 @@
+%h1 Listing student_program_giving_grades
+%table
+  %thead
+    %tr
+      %th Studentprogram
+      %th Seminardate
+      %th Hasthesistitle
+      %th Finalreportongoodnessofthesis
+      %th Refereemakingsuggestion
+      %th Refreecomitteemade
+      %th Thesistitlearabic
+      %th Thiesistitleenglish
+      %th Thesisgeneralfield
+      %th Thesisspecificfield
+      %th Thesisabstract
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_giving_grades.each do |student_program_giving_grade|
+      %tr
+        %td= student_program_giving_grade.studentProgram
+        %td= student_program_giving_grade.seminarDate
+        %td= student_program_giving_grade.hasThesisTitle
+        %td= student_program_giving_grade.finalReportOnGoodnessOfThesis
+        %td= student_program_giving_grade.refereeMakingSuggestion
+        %td= student_program_giving_grade.refreeComitteeMade
+        %td= student_program_giving_grade.thesisTitleArabic
+        %td= student_program_giving_grade.thiesisTitleEnglish
+        %td= student_program_giving_grade.thesisGeneralField
+        %td= student_program_giving_grade.thesisSpecificField
+        %td= student_program_giving_grade.thesisAbstract
+        %td= student_program_giving_grade.creator
+        %td= student_program_giving_grade.modifier
+        %td= link_to 'Show', student_program_giving_grade
+        %td= link_to 'Edit', edit_student_program_giving_grade_path(student_program_giving_grade)
+        %td= link_to 'Destroy', student_program_giving_grade, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student program giving grade', new_student_program_giving_grade_path

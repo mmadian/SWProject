@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @university.name
+%p
+  %strong Creator:
+  = @university.creator
+%p
+  %strong Modifier:
+  = @university.modifier
+= link_to 'Edit', edit_university_path(@university)
+|
+= link_to 'Back', universities_path

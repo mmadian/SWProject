@@ -1,0 +1,25 @@
+%h1 Listing user_privilege_group_roles
+%table
+  %thead
+    %tr
+      %th User
+      %th Privilegegrouprole
+      %th Role
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @user_privilege_group_roles.each do |user_privilege_group_role|
+      %tr
+        %td= user_privilege_group_role.user
+        %td= user_privilege_group_role.privilegeGroupRole
+        %td= user_privilege_group_role.role
+        %td= user_privilege_group_role.creator
+        %td= user_privilege_group_role.modifier
+        %td= link_to 'Show', user_privilege_group_role
+        %td= link_to 'Edit', edit_user_privilege_group_role_path(user_privilege_group_role)
+        %td= link_to 'Destroy', user_privilege_group_role, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New User privilege group role', new_user_privilege_group_role_path

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  programClassSemesterCourse_id: 
+  studentProgram_id: 
+  gradeClass_id: 
+  subscriptionDate: 2015-12-07
+  gradeValue: 1.5
+  isComplementaryCourse: false
+  creator_id: 
+  modifier_id: 
+
+two:
+  programClassSemesterCourse_id: 
+  studentProgram_id: 
+  gradeClass_id: 
+  subscriptionDate: 2015-12-07
+  gradeValue: 1.5
+  isComplementaryCourse: false
+  creator_id: 
+  modifier_id: 

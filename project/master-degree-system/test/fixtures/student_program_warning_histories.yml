@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  studentProgram_id: 
+  warning: MyText
+  date: 2015-12-07
+  creator_id: 
+  modifier_id: 
+
+two:
+  studentProgram_id: 
+  warning: MyText
+  date: 2015-12-07
+  creator_id: 
+  modifier_id: 

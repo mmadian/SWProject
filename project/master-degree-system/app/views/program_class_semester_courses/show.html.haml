@@ -1,0 +1,37 @@
+%p#notice= notice
+%p
+  %strong Specificcoursename:
+  = @program_class_semester_course.specificCourseName
+%p
+  %strong Minimamnumberofstudent:
+  = @program_class_semester_course.minimamNumberOfStudent
+%p
+  %strong Course:
+  = @program_class_semester_course.course.CourseName
+%p
+  %strong Semester:
+  = @program_class_semester_course.semester.semesterName
+%p
+  %strong Courseclass:
+  = @program_class_semester_course.CourseClass.courseClassName
+%p
+  %strong Programclass:
+  = @program_class_semester_course.ProgramClass.name
+%p
+  %strong Year:
+  = @program_class_semester_course.year
+%p
+  %strong Directedreading:
+  = @program_class_semester_course.directedReading
+%p
+  %strong Coursecode:
+  = @program_class_semester_course.courseCode
+%p
+  %strong Creator:
+  = @program_class_semester_course.creator
+%p
+  %strong Modifier:
+  = @program_class_semester_course.modifier
+= link_to 'Edit', edit_program_class_semester_course_path(@program_class_semester_course)
+|
+= link_to 'Back', program_class_semester_courses_path

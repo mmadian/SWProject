@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  professor_id: 
+  programClassSemesterCourse: MyString
+  creator_id: 
+  modifier_id: 
+
+two:
+  professor_id: 
+  programClassSemesterCourse: MyString
+  creator_id: 
+  modifier_id: 

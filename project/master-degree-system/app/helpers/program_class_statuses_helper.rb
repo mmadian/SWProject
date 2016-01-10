@@ -1,0 +1,2 @@
+module ProgramClassStatusesHelper
+end

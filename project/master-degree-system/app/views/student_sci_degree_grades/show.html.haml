@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Studentscidegree:
+  = @student_sci_degree_grade.studentSciDegree
+%p
+  %strong Year:
+  = @student_sci_degree_grade.year
+%p
+  %strong Grade:
+  = @student_sci_degree_grade.grade
+%p
+  %strong Creator:
+  = @student_sci_degree_grade.creator
+%p
+  %strong Modifier:
+  = @student_sci_degree_grade.modifier
+= link_to 'Edit', edit_student_sci_degree_grade_path(@student_sci_degree_grade)
+|
+= link_to 'Back', student_sci_degree_grades_path

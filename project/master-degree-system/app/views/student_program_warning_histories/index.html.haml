@@ -1,0 +1,25 @@
+%h1 Listing student_program_warning_histories
+%table
+  %thead
+    %tr
+      %th Studentprogram
+      %th Warning
+      %th Date
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_warning_histories.each do |student_program_warning_history|
+      %tr
+        %td= student_program_warning_history.studentProgram
+        %td= student_program_warning_history.warning
+        %td= student_program_warning_history.date
+        %td= student_program_warning_history.creator
+        %td= student_program_warning_history.modifier
+        %td= link_to 'Show', student_program_warning_history
+        %td= link_to 'Edit', edit_student_program_warning_history_path(student_program_warning_history)
+        %td= link_to 'Destroy', student_program_warning_history, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student program warning history', new_student_program_warning_history_path

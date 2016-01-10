@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @role.name
+%p
+  %strong Url:
+  = @role.url
+%p
+  %strong Creator:
+  = @role.creator
+%p
+  %strong Modifier:
+  = @role.modifier
+= link_to 'Edit', edit_role_path(@role)
+|
+= link_to 'Back', roles_path

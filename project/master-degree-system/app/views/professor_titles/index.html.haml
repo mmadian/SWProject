@@ -1,0 +1,23 @@
+%h1 Listing professor_titles
+%table
+  %thead
+    %tr
+      %th Name
+      %th Date
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @professor_titles.each do |professor_title|
+      %tr
+        %td= professor_title.name
+        %td= professor_title.date
+        %td= professor_title.creator
+        %td= professor_title.modifier
+        %td= link_to 'Show', professor_title
+        %td= link_to 'Edit', edit_professor_title_path(professor_title)
+        %td= link_to 'Destroy', professor_title, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Professor title', new_professor_title_path

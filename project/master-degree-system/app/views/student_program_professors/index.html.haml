@@ -1,0 +1,45 @@
+%h1 Listing student_program_professors
+%table
+  %thead
+    %tr
+      %th Studentprogram
+      %th Professor
+      %th Isprimary
+      %th Isdefensecommitee
+      %th Comment
+      %th Additiondate
+      %th Isaccepted
+      %th Acceptancedate
+      %th Isexternal
+      %th Hasreceivedindivdualreport
+      %th Hasreceivedcollectivereport
+      %th Hasreceivedsatisfactionreport
+      %th Iscommitteehead
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_professors.each do |student_program_professor|
+      %tr
+        %td= student_program_professor.studentProgram
+        %td= student_program_professor.professor
+        %td= student_program_professor.isPrimary
+        %td= student_program_professor.isDefenseCommitee
+        %td= student_program_professor.comment
+        %td= student_program_professor.additionDate
+        %td= student_program_professor.isAccepted
+        %td= student_program_professor.acceptanceDate
+        %td= student_program_professor.isExternal
+        %td= student_program_professor.hasReceivedIndivdualReport
+        %td= student_program_professor.hasReceivedCollectiveReport
+        %td= student_program_professor.hasReceivedSatisfactionReport
+        %td= student_program_professor.isCommitteeHead
+        %td= student_program_professor.creator
+        %td= student_program_professor.modifier
+        %td= link_to 'Show', student_program_professor
+        %td= link_to 'Edit', edit_student_program_professor_path(student_program_professor)
+        %td= link_to 'Destroy', student_program_professor, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student program professor', new_student_program_professor_path

@@ -1,0 +1,28 @@
+%p#notice= notice
+%p
+  %strong Programclasssemestercourse:
+  = @student_program_course.programClassSemesterCourse
+%p
+  %strong Studentprogram:
+  = @student_program_course.studentProgram
+%p
+  %strong Gradeclass:
+  = @student_program_course.gradeClass
+%p
+  %strong Subscriptiondate:
+  = @student_program_course.subscriptionDate
+%p
+  %strong Gradevalue:
+  = @student_program_course.gradeValue
+%p
+  %strong Iscomplementarycourse:
+  = @student_program_course.isComplementaryCourse
+%p
+  %strong Creator:
+  = @student_program_course.creator
+%p
+  %strong Modifier:
+  = @student_program_course.modifier
+= link_to 'Edit', edit_student_program_course_path(@student_program_course)
+|
+= link_to 'Back', student_program_courses_path

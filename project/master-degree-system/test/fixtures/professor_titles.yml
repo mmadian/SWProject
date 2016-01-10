@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date: 2015-12-07
+  creator_id: 
+  modifier_id: 
+
+two:
+  name: MyString
+  date: 2015-12-07
+  creator_id: 
+  modifier_id: 

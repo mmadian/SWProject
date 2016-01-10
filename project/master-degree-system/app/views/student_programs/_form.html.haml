@@ -1,0 +1,47 @@
+= form_for(@student_program) do |f|
+  - if @student_program.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@student_program.errors.count, "error")
+        prohibited this student_program from being saved:
+      %ul
+        - @student_program.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :student
+    %br/
+    = f.select :student, Student.all.map{|s| [s.email,s.id]}
+  .field
+    = f.label :Program_Class
+    %br/
+    = f.select :ProgramClass, ProgramClass.all.map{|pc| [pc.name,pc.id]}
+  .field
+    = f.label :finished_Toefl
+    %br/
+    = f.check_box :finishedToefl
+  .field
+    = f.label :toefl_Date
+    %br/
+    = f.date_select :toeflDate
+  .field
+    = f.label :has_Research_Point
+    %br/
+    = f.check_box :hasResearchPoint
+  .field
+    = f.label :puplished_A_Paper
+    %br/
+    = f.check_box :puplishedAPaper
+  .field
+    = f.label :program_Start_Date
+    %br/
+    = f.date_select :programStartDate
+  .field
+    = f.label :is_VTMENA_program
+    %br/
+    = f.check_box :isVTMENAprogram
+  .field
+    = f.hidden_field :creator
+  .field
+    = f.hidden_field :modifier
+  .actions
+    = f.submit

@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Studentprogram:
+  = @student_program_status_history.studentProgram
+%p
+  %strong Programclassstatus:
+  = @student_program_status_history.programClassStatus
+%p
+  %strong Date:
+  = @student_program_status_history.date
+%p
+  %strong Comments:
+  = @student_program_status_history.comments
+%p
+  %strong Creator:
+  = @student_program_status_history.creator
+%p
+  %strong Modifier:
+  = @student_program_status_history.modifier
+= link_to 'Edit', edit_student_program_status_history_path(@student_program_status_history)
+|
+= link_to 'Back', student_program_status_histories_path

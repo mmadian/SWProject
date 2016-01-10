@@ -1,0 +1,43 @@
+%p#notice= notice
+%p
+  %strong Studentprogram:
+  = @student_program_giving_grade.studentProgram
+%p
+  %strong Seminardate:
+  = @student_program_giving_grade.seminarDate
+%p
+  %strong Hasthesistitle:
+  = @student_program_giving_grade.hasThesisTitle
+%p
+  %strong Finalreportongoodnessofthesis:
+  = @student_program_giving_grade.finalReportOnGoodnessOfThesis
+%p
+  %strong Refereemakingsuggestion:
+  = @student_program_giving_grade.refereeMakingSuggestion
+%p
+  %strong Refreecomitteemade:
+  = @student_program_giving_grade.refreeComitteeMade
+%p
+  %strong Thesistitlearabic:
+  = @student_program_giving_grade.thesisTitleArabic
+%p
+  %strong Thiesistitleenglish:
+  = @student_program_giving_grade.thiesisTitleEnglish
+%p
+  %strong Thesisgeneralfield:
+  = @student_program_giving_grade.thesisGeneralField
+%p
+  %strong Thesisspecificfield:
+  = @student_program_giving_grade.thesisSpecificField
+%p
+  %strong Thesisabstract:
+  = @student_program_giving_grade.thesisAbstract
+%p
+  %strong Creator:
+  = @student_program_giving_grade.creator
+%p
+  %strong Modifier:
+  = @student_program_giving_grade.modifier
+= link_to 'Edit', edit_student_program_giving_grade_path(@student_program_giving_grade)
+|
+= link_to 'Back', student_program_giving_grades_path

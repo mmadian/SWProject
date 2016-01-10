@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @department.name
+%p
+  %strong Creator:
+  = @department.creator
+%p
+  %strong Modifier:
+  = @department.modifier
+= link_to 'Edit', edit_department_path(@department)
+|
+= link_to 'Back', departments_path

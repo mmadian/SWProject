@@ -1,0 +1,19 @@
+%h1 Listing professor_program_class_courses
+%table.table
+  %thead
+    %tr
+      %th Professor
+      %th Program class semester course
+      %th
+      %th
+      %th
+  %tbody
+    - @professor_program_class_courses.each do |professor_program_class_course|
+      %tr
+        %td= professor_program_class_course.professor.user.name
+        %td= professor_program_class_course.programClassSemesterCourse.specificCourseName
+        %td= link_to 'Show', professor_program_class_course
+        %td= link_to 'Edit', edit_professor_program_class_course_path(professor_program_class_course)
+        %td= link_to 'Destroy', professor_program_class_course, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Professor program class course', new_professor_program_class_course_path

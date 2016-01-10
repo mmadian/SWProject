@@ -1,0 +1,31 @@
+%h1 Listing student_program_courses
+%table
+  %thead
+    %tr
+      %th Programclasssemestercourse
+      %th Studentprogram
+      %th Gradeclass
+      %th Subscriptiondate
+      %th Gradevalue
+      %th Iscomplementarycourse
+      %th Creator
+      %th Modifier
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_courses.each do |student_program_course|
+      %tr
+        %td= student_program_course.programClassSemesterCourse
+        %td= student_program_course.studentProgram
+        %td= student_program_course.gradeClass
+        %td= student_program_course.subscriptionDate
+        %td= student_program_course.gradeValue
+        %td= student_program_course.isComplementaryCourse
+        %td= student_program_course.creator
+        %td= student_program_course.modifier
+        %td= link_to 'Show', student_program_course
+        %td= link_to 'Edit', edit_student_program_course_path(student_program_course)
+        %td= link_to 'Destroy', student_program_course, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student program course', new_student_program_course_path

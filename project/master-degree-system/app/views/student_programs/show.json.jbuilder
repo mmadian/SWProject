@@ -1,0 +1,1 @@
+json.extract! @student_program, :id, :student_id, :ProgramClass_id, :finishedToefl, :toeflDate, :hasResearchPoint, :puplishedAPaper, :programStartDate, :isVTMENAprogram, :creator_id, :modifier_id, :created_at, :updated_at

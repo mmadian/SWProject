@@ -1,0 +1,23 @@
+= form_for(@grade_class) do |f|
+  - if @grade_class.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@grade_class.errors.count, "error")
+        prohibited this grade_class from being saved:
+      %ul
+        - @grade_class.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :creator
+    %br/
+    = f.text_field :creator
+  .field
+    = f.label :modifier
+    %br/
+    = f.text_field :modifier
+  .actions
+    = f.submit

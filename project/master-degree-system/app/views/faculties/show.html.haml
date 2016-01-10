@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @faculty.name
+%p
+  %strong Creator:
+  = @faculty.creator
+%p
+  %strong Modifier:
+  = @faculty.modifier
+= link_to 'Edit', edit_faculty_path(@faculty)
+|
+= link_to 'Back', faculties_path

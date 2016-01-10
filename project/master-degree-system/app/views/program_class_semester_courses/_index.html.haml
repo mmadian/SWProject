@@ -1,0 +1,47 @@
+/ %h1 Listing program_class_semester_courses
+%table.table
+  %thead
+    %tr
+      %th Program class
+      %th Semester
+      %th Year
+      %th Courseclass
+      %th Course
+      %th Specific course name
+      %th Minimam number of student
+      %th Directed reading
+      %th Coursecode
+      %th
+      %th
+      %th
+  %thead
+    %tr
+    = form_tag request.url,method: :get do
+      %div{style: "display: block"}
+        %label
+          Semester
+        %li
+          = select_tag '',options_from_collection_for_select(Semester.all, "id", "semesterName")
+        %label
+          Year
+        %li
+          = text_field_tag nil,nil
+        %li
+          = submit_tag 'Search'
+  %tbody
+    - ProgramClassSemesterCourse.all.each do |program_class_semester_course|
+      %tr
+        %td= program_class_semester_course.ProgramClass.try(:name)
+        %td= program_class_semester_course.semester.try(:semesterName)
+        %td= program_class_semester_course.year
+        %td= program_class_semester_course.CourseClass.try(:courseClassName)
+        %td= program_class_semester_course.course.try(:CourseName)
+        %td= program_class_semester_course.specificCourseName
+        %td= program_class_semester_course.minimamNumberOfStudent
+        %td= program_class_semester_course.directedReading
+        %td= program_class_semester_course.courseCode
+        %td= link_to 'Show', program_class_semester_course
+        %td= link_to 'Edit', edit_program_class_semester_course_path(program_class_semester_course,program_class: program_class_semester_course.ProgramClass.try(:name))
+        %td= link_to 'Destroy', program_class_semester_course, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Program class semester course', new_program_class_semester_course_path

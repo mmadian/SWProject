@@ -1,0 +1,34 @@
+%p#notice= notice
+%p
+  %strong Usertype:
+  = @user.userType
+%p
+  %strong Nationalid:
+  = @user.nationalID
+%p
+  %strong Name:
+  = @user.name
+%p
+  %strong Imageurl:
+  = @user.imageURL
+%p
+  %strong Mobilenumber:
+  = @user.mobileNumber
+%p
+  %strong Phonenumber:
+  = @user.phoneNumber
+%p
+  %strong Email:
+  = @user.email
+%p
+  %strong Password:
+  = @user.password
+%p
+  %strong Creator:
+  = @user.creator
+%p
+  %strong Modifier:
+  = @user.modifier
+= link_to 'Edit', edit_user_path(@user)
+|
+= link_to 'Back', users_path

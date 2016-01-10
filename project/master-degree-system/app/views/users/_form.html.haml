@@ -1,0 +1,51 @@
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :userType
+    %br/
+    = f.select :userType_id, UserType.all.map{|ut| [ut.name, ut.id]},{include_blank: "Please Select"}
+  .field
+    = f.label :national_ID
+    %br/
+    = f.text_field :nationalID
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :image_URL
+    %br/
+    = f.text_field :imageURL
+  .field
+    = f.label :mobile_Number
+    %br/
+    = f.text_field :mobileNumber
+  .field
+    = f.label :phone_Number
+    %br/
+    = f.text_field :phoneNumber
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "off"
+  .field
+    = f.hidden_field :creator
+  .field
+    = f.hidden_field :modifier
+  .actions
+    = f.submit

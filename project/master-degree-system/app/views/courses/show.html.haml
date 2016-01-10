@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Coursename:
+  = @course.CourseName
+%p
+  %strong Creator:
+  = @course.creator
+%p
+  %strong Modifier:
+  = @course.modifier
+= link_to 'Edit', edit_course_path(@course)
+|
+= link_to 'Back', courses_path

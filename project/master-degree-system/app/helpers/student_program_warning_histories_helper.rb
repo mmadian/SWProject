@@ -1,0 +1,2 @@
+module StudentProgramWarningHistoriesHelper
+end

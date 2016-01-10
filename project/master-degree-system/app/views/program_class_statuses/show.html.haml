@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Programclass:
+  = @program_class_status.programClass
+%p
+  %strong Preprogramclass:
+  = @program_class_status.preProgramClass
+%p
+  %strong Status:
+  = @program_class_status.status
+%p
+  %strong Creator:
+  = @program_class_status.creator
+%p
+  %strong Modifier:
+  = @program_class_status.modifier
+= link_to 'Edit', edit_program_class_status_path(@program_class_status)
+|
+= link_to 'Back', program_class_statuses_path

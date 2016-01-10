@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  duration: 1
+  extensionPeriod: 1
+  numberOfCourses: 1
+  creator_id: 
+  modifier_id: 
+
+two:
+  name: MyString
+  duration: 1
+  extensionPeriod: 1
+  numberOfCourses: 1
+  creator_id: 
+  modifier_id: 

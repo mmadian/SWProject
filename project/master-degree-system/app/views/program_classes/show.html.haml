@@ -1,0 +1,18 @@
+%p
+  %strong Name:
+  = @program_class.name
+%p
+  %strong Duration:
+  = @program_class.duration
+%p
+  %strong Extension period:
+  = @program_class.extensionPeriod
+%p
+  %strong Number of courses:
+  = @program_class.numberOfCourses
+
+= render 'program_class_semester_courses/index'
+
+= link_to 'Edit', edit_program_class_path(@program_class)
+|
+= link_to 'Back', program_classes_path

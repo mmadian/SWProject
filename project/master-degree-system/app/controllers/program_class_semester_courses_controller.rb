@@ -1,10 +1,14 @@
 class ProgramClassSemesterCoursesController < ApplicationController
   before_action :set_program_class_semester_course, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html,:json
 
   def index
-    @program_class_semester_courses = ProgramClassSemesterCourse.all
+    if params[:semester]
+      @program_class_semester_courses = ProgramClassSemesterCourse.where(semester_id: params[:semester],year: Date.today.year)
+    else
+      @program_class_semester_courses = ProgramClassSemesterCourse.all
+    end
     respond_with(@program_class_semester_courses)
   end
 

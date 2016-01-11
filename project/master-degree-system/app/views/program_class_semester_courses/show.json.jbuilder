@@ -1,1 +1,1 @@
-json.extract! @program_class_semester_course, :id, :specificCourseName, :minimamNumberOfStudent, :course_id, :semester_id, :CourseClass_id, :ProgramClass_id, :year, :directedReading, :courseCode, :creator_id, :modifier_id, :created_at, :updated_at
+json.extract! @program_class_semester_course, :id, :specificCourseName, :minimamNumberOfStudent, :course_id, :semester_id, :CourseClass_id, :ProgramClass_id, :year, :directedReading, :courseCode,:credit_hours, :total_grade , :creator_id, :modifier_id, :created_at, :updated_at

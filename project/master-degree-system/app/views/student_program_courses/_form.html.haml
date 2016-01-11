@@ -1,4 +1,4 @@
-= form_for(@student_program_course) do |f|
+= form_for(@student_program_course, url: student_program_student_program_courses_path(student_program_id: params[:student_program_id])) do |f|
   - if @student_program_course.errors.any?
     #error_explanation
       %h2
@@ -7,37 +7,78 @@
       %ul
         - @student_program_course.errors.full_messages.each do |msg|
           %li= msg
+  .filed
+    = label_tag "Program"
+    %br/
+    = StudentProgram.find(params[:student_program_id]).ProgramClass.name
+  .filed
+    = label_tag "Semester"
+    %br/
+    = select_tag "semester", options_from_collection_for_select(Semester.all,'id','semesterName'), prompt: "Please Select"
   .field
     = f.label :program_class_semester_course
     %br/
-    = f.select :programClassSemesterCourse_id, ProgramClassSemesterCourse.all.map{|ps| [ps.specificCourseName,ps.id]}
+    = f.select :programClassSemesterCourse_id,[]
+  .filed.show_info
+    Information
+    .course_code
+    .credit_hour
+    .total_grade
+    .directed_reading
+
   .field
-    = f.label :studentProgram
+    = f.hidden_field :studentProgram_id, value: params[:student_program_id]
+  .field
+    = f.label :gradeValue, 'Student Grade'
     %br/
-    = f.hidden_field :studentProgram_id, params[:student_program_id]
+    = f.number_field :gradeValue
   .field
-    = f.label :gradeClass
+    = f.label :gradeClass, 'Student Grade Class'
     %br/
-    = f.text_field :gradeClass
-  .field
+    = f.select :gradeClass_id, GradeClass.all.map{|g| [g.name,g.id]}
+  .field.hide
     = f.label :subscriptionDate
     %br/
     = f.date_select :subscriptionDate
-  .field
-    = f.label :gradeValue
-    %br/
-    = f.text_field :gradeValue
+  
   .field
     = f.label :isComplementaryCourse
     %br/
     = f.check_box :isComplementaryCourse
-  .field
-    = f.label :creator
-    %br/
-    = f.text_field :creator
-  .field
-    = f.label :modifier
-    %br/
-    = f.text_field :modifier
   .actions
     = f.submit
+
+:javascript
+  $("#semester").on("change",function(){
+    $.ajax({
+      url: '/program_class_semester_courses?semester='+$('#semester').val(),
+      data: {},
+      dataType: 'json',
+      success: function(data) {
+        $('#student_program_course_programClassSemesterCourse_id').empty().append("<option>Please Select</option>")
+        for(var i in data){
+          $('#student_program_course_programClassSemesterCourse_id').append("<option value="+data[i].id+">"+data[i].specificCourseName+"</option>");
+        }
+      },
+      fail: function(data) {
+        alert('Invalid data');
+      }
+    });
+  });
+
+  $("#student_program_course_programClassSemesterCourse_id").on("change",function(){
+    $.ajax({
+      url: '/program_class_semester_courses/'+$('#student_program_course_programClassSemesterCourse_id').val(),
+      data: {},
+      dataType: 'json',
+      success: function(data) {
+        $(".course_code").text("Code: "+data.courseCode);
+        $(".credit_hour").text("Credit Hours: "+data.credit_hours);
+        $(".total_grade").text("Total Grade: "+data.total_grade);
+        $(".directed_reading").text("Is Directed Reading: "+data.directedReading);
+      },
+      fail: function(data) {
+        alert('Invalid data');
+      }
+    });
+  });

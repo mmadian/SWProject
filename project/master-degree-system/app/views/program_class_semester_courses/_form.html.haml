@@ -67,18 +67,18 @@
 :javascript
   $('#program_class_semester_course_course_id').on("change",function(){
     $.ajax({
-        url: '/courses/'+$('#program_class_semester_course_course_id').val(),
-        data: {},
-        dataType: 'json',
-        success: function(data) {
-          $('#program_class_semester_course_specificCourseName').val(data.CourseName);
-          $('#program_class_semester_course_courseCode').val(data.courseCode);
-          $('#program_class_semester_course_credit_hours').val(data.credit_hours);
-          $('#program_class_semester_course_total_grade').val(data.total_grade);
-          $('#program_class_semester_course_min_number_of_student').val(data.min_number_of_student);
-        },
-        fail: function(data) {
-          alert('Invalid data');
-        }
-      });
+      url: '/courses/'+$('#program_class_semester_course_course_id').val(),
+      data: {},
+      dataType: 'json',
+      success: function(data) {
+        $('#program_class_semester_course_specificCourseName').val(data.CourseName);
+        $('#program_class_semester_course_courseCode').val(data.courseCode);
+        $('#program_class_semester_course_credit_hours').val(data.credit_hours);
+        $('#program_class_semester_course_total_grade').val(data.total_grade);
+        $('#program_class_semester_course_min_number_of_student').val(data.min_number_of_student);
+      },
+      fail: function(data) {
+        alert('Invalid data');
+      }
+    });
   })

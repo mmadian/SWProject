@@ -9,6 +9,10 @@ class StudentProgramsController < ApplicationController
   end
 
   def show
+    ids = StudentProgramCourse.where(studentProgram_id: @student_program.id).pluck(:programClassSemesterCourse_id)
+    params[:q] ||= {}
+    @search = ProgramClassSemesterCourse.where(id: ids).search(params[:q])
+    @program_class_semester_course = @search.result
     respond_with(@student_program)
   end
 

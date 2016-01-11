@@ -39,11 +39,13 @@ MasterDegreeSystem::Application.routes.draw do
 
   resources :student_program_professors
 
-  resources :student_program_courses
+  # resources :student_program_courses
 
   resources :grade_classes
 
-  resources :student_programs
+  resources :student_programs do
+    resources :student_program_courses
+  end
 
   resources :students
 

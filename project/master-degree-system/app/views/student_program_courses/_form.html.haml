@@ -8,13 +8,13 @@
         - @student_program_course.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :programClassSemesterCourse
+    = f.label :program_class_semester_course
     %br/
-    = f.text_field :programClassSemesterCourse
+    = f.select :programClassSemesterCourse_id, ProgramClassSemesterCourse.all.map{|ps| [ps.specificCourseName,ps.id]}
   .field
     = f.label :studentProgram
     %br/
-    = f.text_field :studentProgram
+    = f.hidden_field :studentProgram_id, params[:student_program_id]
   .field
     = f.label :gradeClass
     %br/

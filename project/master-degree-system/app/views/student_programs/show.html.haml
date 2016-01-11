@@ -1,10 +1,10 @@
 %p#notice= notice
 %p
   %strong Student:
-  = @student_program.student
+  = User.find(@student_program.student_id).name
 %p
   %strong Programclass:
-  = @student_program.ProgramClass
+  = @student_program.ProgramClass.name
 %p
   %strong Finishedtoefl:
   = @student_program.finishedToefl
@@ -23,12 +23,14 @@
 %p
   %strong Isvtmenaprogram:
   = @student_program.isVTMENAprogram
-%p
-  %strong Creator:
-  = @student_program.creator
-%p
-  %strong Modifier:
-  = @student_program.modifier
+
 = link_to 'Edit', edit_student_program_path(@student_program)
 |
 = link_to 'Back', student_programs_path
+
+%hr
+= render 'program_class_semester_courses/student_index'
+
+/ = render ''
+
+/ = render ''

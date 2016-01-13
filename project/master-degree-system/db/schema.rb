@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110211229) do
+ActiveRecord::Schema.define(version: 20160113183859) do
 
   create_table "course_classes", force: true do |t|
     t.string   "courseClassName"

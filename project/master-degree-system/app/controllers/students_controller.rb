@@ -9,8 +9,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student_sci_degrees = StudentSciDegree.all
-    @student_programs = StudentProgram.all
+    @student_sci_degrees = StudentSciDegree.where(student_id: @student.id)
+    @student_programs = StudentProgram.where(student_id: @student.id)
     respond_with(@student)
   end
 

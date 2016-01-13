@@ -27,9 +27,9 @@ class UsersController < ApplicationController
     @user.save
     case @user.userType.name
     when "Professor"
-      Professor.new(user_id:@user.id ,creator_id: current_user.id).save!
+      Professor.create!(user_id: @user.id ,creator_id: current_user.id)
     when "Student"
-      Student.new(user_id:@user.id ,creator_id: current_user.id).save!
+      Student.create!(user_id: @user.id ,creator_id: current_user.id)
     end
     respond_with(@user)
   end

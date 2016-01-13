@@ -1,9 +1,9 @@
 class AddMetaData < ActiveRecord::Migration
   def change
   	CourseClass.create!(courseClassName: 'Hardware')
-	CourseClass.create!(courseClassName: 'Software')
-	CourseClass.create!(courseClassName: 'Control')
-	CourseClass.create!(courseClassName: 'Application')
+  	CourseClass.create!(courseClassName: 'Software')
+  	CourseClass.create!(courseClassName: 'Control')
+  	CourseClass.create!(courseClassName: 'Application')
 
   	Semester.create!(semesterName: "Fall")
   	Semester.create!(semesterName: "Summer")
@@ -33,9 +33,13 @@ class AddMetaData < ActiveRecord::Migration
   	GradeClass.create!(name: 'FW')
   	GradeClass.create!(name: 'I')
 
-  	ScientificDegreeClass.create!(name: 'Bachelor of Science')
-	ScientificDegreeClass.create!(name: 'Master of Science')
-	ScientificDegreeClass.create!(name: 'Diploma of graduate studies')
-	ScientificDegreeClass.create!(name: 'PhD')
+  	SciDegreeClass.create!(name: 'Bachelor of Science')
+  	SciDegreeClass.create!(name: 'Master of Science')
+  	SciDegreeClass.create!(name: 'Diploma of graduate studies')
+  	SciDegreeClass.create!(name: 'PhD')
+
+    University.create!(name: "Alexandria University")
+    Faculty.create!(name: "Faculty of Engineering")
+    Department.create!(name: "Computer and system department")
   end
 end

@@ -44,4 +44,4 @@
         %td= link_to 'Edit', edit_student_program_professor_path(student_program_professor,student_program_id: @student_program.id)
         %td= link_to 'Delete', student_program_professor, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Student program professor', new_student_program_professor_path(student_program_id: @student_program.id)
+= link_to 'Add Professor', new_student_program_professor_path(student_program_id: @student_program.id)

@@ -15,6 +15,8 @@ class StudentProgramsController < ApplicationController
     @program_class_semester_course = @search.result
 
     @student_program_professors = StudentProgramProfessor.where(studentProgram_id: @student_program.id)
+
+    @student_program_warning_histories = StudentProgramWarningHistory.where(studentProgram_id: @student_program.id)
     @student_program_status_histories = StudentProgramStatusHistory.where(studentProgram_id: @student_program.id)
 
     respond_with(@student_program)

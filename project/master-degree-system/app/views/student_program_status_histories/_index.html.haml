@@ -18,4 +18,4 @@
         %td= link_to 'Edit', edit_student_program_status_history_path(student_program_status_history)
         %td= link_to 'Delete', student_program_status_history, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Student program status history', new_student_program_status_history_path(student_program_id: @student_program.id)
+= link_to 'New Status', new_student_program_status_history_path(student_program_id: @student_program.id)

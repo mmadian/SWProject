@@ -24,15 +24,11 @@
   %strong Is vtmen a program:
   = @student_program.isVTMENAprogram
 
-= link_to 'Edit', edit_student_program_path(@student_program)
-|
-= link_to 'Back', student_programs_path
-
+= render 'student_program_status_histories/index'
+= render 'student_program_warning_histories/index'
 %hr
 %h4 Courses
 = render 'program_class_semester_courses/student_index'
 = render 'student_program_professors/index'
-
-= render 'student_program_status_histories/index'
 
 / = render 'student_program_giving_grades/show'

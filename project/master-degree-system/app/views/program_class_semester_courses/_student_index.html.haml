@@ -30,4 +30,4 @@
         %td= link_to 'Edit', edit_program_class_semester_course_path(program_class_semester_course,program_class: program_class_semester_course.ProgramClass.try(:name))
         %td= link_to 'Delete', program_class_semester_course, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New student program', new_student_program_student_program_course_path(@student_program)
+= link_to 'Add Course', new_student_program_student_program_course_path(@student_program)

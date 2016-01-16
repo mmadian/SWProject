@@ -10,7 +10,7 @@
   .field
     = f.label :ProgramClass, 'Program'
     %br/
-    = f.select :ProgramClass_id,ProgramClass.where(name: params[:program_class]).map{|s| [s.name,s.id]}
+    = f.select :ProgramClass_id, ProgramClass.where(name: params[:program_class]).map{|s| [s.name,s.id]}
   .field
     = f.label :semester
     %br/
@@ -22,7 +22,7 @@
   .field
     = f.label :CourseClass, 'Course Class' 
     %br/
-    = f.select :CourseClass_id, CourseClass.all.map{|s| [s.courseClassName,s.id]}
+    = f.select :CourseClass_id, CourseClass.all.map{|s| [s.courseClassName,s.id]}, prompt: "Please Select"
   .field
     = f.label :course
     %br/
@@ -54,7 +54,6 @@
   .field
     = label_tag :professor
     %br/
-    / - binding.pry
     = select_tag 'professor[]', options_from_collection_for_select(User.where(id: Professor.all.pluck(:user_id)).all,'id','name'),multiple: :multiple
   .field.hidden
     = f.hidden_field :creator

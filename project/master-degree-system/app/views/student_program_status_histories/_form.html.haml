@@ -8,13 +8,11 @@
         - @student_program_status_history.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :studentProgram
-    %br/
-    = f.text_field :studentProgram
+    = f.hidden_field :studentProgram_id, value: params[:student_program_id]
   .field
     = f.label :programClassStatus
     %br/
-    = f.text_field :programClassStatus
+    = f.select :programClassStatus_id, ProgramClassStatus.all.map{|s| [s.status,s.id]}
   .field
     = f.label :date
     %br/
@@ -23,13 +21,5 @@
     = f.label :comments
     %br/
     = f.text_area :comments
-  .field
-    = f.label :creator
-    %br/
-    = f.text_field :creator
-  .field
-    = f.label :modifier
-    %br/
-    = f.text_field :modifier
   .actions
     = f.submit

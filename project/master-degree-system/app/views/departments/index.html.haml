@@ -1,10 +1,8 @@
-%h1 Listing departments
-%table
+%h1 Departments
+%table.table
   %thead
     %tr
       %th Name
-      %th Creator
-      %th Modifier
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @departments.each do |department|
       %tr
         %td= department.name
-        %td= department.creator
-        %td= department.modifier
         %td= link_to 'Show', department
         %td= link_to 'Edit', edit_department_path(department)
-        %td= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', department, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Department', new_department_path

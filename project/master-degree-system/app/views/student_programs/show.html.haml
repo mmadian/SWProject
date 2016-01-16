@@ -3,25 +3,25 @@
   %strong Student:
   = User.find(@student_program.student_id).name
 %p
-  %strong Programclass:
+  %strong Program class:
   = @student_program.ProgramClass.name
 %p
-  %strong Finishedtoefl:
+  %strong Finished toefl:
   = @student_program.finishedToefl
 %p
-  %strong Toefldate:
+  %strong Toefl date:
   = @student_program.toeflDate
 %p
-  %strong Hasresearchpoint:
+  %strong Has research point:
   = @student_program.hasResearchPoint
 %p
-  %strong Puplishedapaper:
+  %strong Puplished a paper:
   = @student_program.puplishedAPaper
 %p
-  %strong Programstartdate:
+  %strong Program start date:
   = @student_program.programStartDate
 %p
-  %strong Isvtmenaprogram:
+  %strong Is vtmen a program:
   = @student_program.isVTMENAprogram
 
 = link_to 'Edit', edit_student_program_path(@student_program)
@@ -29,8 +29,10 @@
 = link_to 'Back', student_programs_path
 
 %hr
+%h4 Courses
 = render 'program_class_semester_courses/student_index'
+= render 'student_program_professors/index'
 
-/ = render ''
+= render 'student_program_status_histories/index'
 
-/ = render ''
+/ = render 'student_program_giving_grades/show'

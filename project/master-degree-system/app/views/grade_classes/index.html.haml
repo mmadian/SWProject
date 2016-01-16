@@ -1,10 +1,8 @@
-%h1 Listing grade_classes
-%table
+%h1 Grades
+%table.table
   %thead
     %tr
-      %th Name
-      %th Creator
-      %th Modifier
+      %th Grade
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @grade_classes.each do |grade_class|
       %tr
         %td= grade_class.name
-        %td= grade_class.creator
-        %td= grade_class.modifier
         %td= link_to 'Show', grade_class
         %td= link_to 'Edit', edit_grade_class_path(grade_class)
-        %td= link_to 'Destroy', grade_class, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', grade_class, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Grade class', new_grade_class_path

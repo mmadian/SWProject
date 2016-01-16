@@ -1,10 +1,8 @@
-%h1 Listing course_classes
-%table
+%h1 Courses
+%table.table
   %thead
     %tr
-      %th Courseclassname
-      %th Creator
-      %th Modifier
+      %th Course class name
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @course_classes.each do |course_class|
       %tr
         %td= course_class.courseClassName
-        %td= course_class.creator
-        %td= course_class.modifier
         %td= link_to 'Show', course_class
         %td= link_to 'Edit', edit_course_class_path(course_class)
-        %td= link_to 'Destroy', course_class, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', course_class, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Course class', new_course_class_path

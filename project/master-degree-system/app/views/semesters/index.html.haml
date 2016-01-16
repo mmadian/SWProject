@@ -1,10 +1,8 @@
-%h1 Listing semesters
-%table
+%h1 Semesters
+%table.table
   %thead
     %tr
       %th Semestername
-      %th Creator
-      %th Modifier
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @semesters.each do |semester|
       %tr
         %td= semester.semesterName
-        %td= semester.creator
-        %td= semester.modifier
         %td= link_to 'Show', semester
         %td= link_to 'Edit', edit_semester_path(semester)
-        %td= link_to 'Destroy', semester, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', semester, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Semester', new_semester_path

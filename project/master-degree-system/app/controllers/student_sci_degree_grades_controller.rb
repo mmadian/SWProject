@@ -23,12 +23,12 @@ class StudentSciDegreeGradesController < ApplicationController
   def create
     @student_sci_degree_grade = StudentSciDegreeGrade.new(student_sci_degree_grade_params)
     @student_sci_degree_grade.save
-    respond_with(@student_sci_degree_grade)
+    respond_with(StudentSciDegree.find(params["student_sci_degree_id"]))
   end
 
   def update
     @student_sci_degree_grade.update(student_sci_degree_grade_params)
-    respond_with(@student_sci_degree_grade)
+    respond_with(StudentSciDegree.find(params["student_sci_degree_id"]))
   end
 
   def destroy

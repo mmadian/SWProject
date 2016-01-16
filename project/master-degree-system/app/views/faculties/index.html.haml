@@ -1,10 +1,8 @@
-%h1 Listing faculties
-%table
+%h1 Faculties
+%table.table
   %thead
     %tr
       %th Name
-      %th Creator
-      %th Modifier
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @faculties.each do |faculty|
       %tr
         %td= faculty.name
-        %td= faculty.creator
-        %td= faculty.modifier
         %td= link_to 'Show', faculty
         %td= link_to 'Edit', edit_faculty_path(faculty)
-        %td= link_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', faculty, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Faculty', new_faculty_path

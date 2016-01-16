@@ -1,0 +1,47 @@
+/ %h1 Listing student_program_professors
+%h4 Supervisors
+%table.table
+  %thead
+    %tr
+      %th Professor
+      %th Isprimary
+      %th Additiondate
+      %th Isexternal
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_professors.where(isDefenseCommitee: false).each do |student_program_professor|
+      %tr
+        %td= student_program_professor.professor.user.name
+        %td= student_program_professor.isPrimary
+        %td= student_program_professor.additionDate
+        %td= student_program_professor.isExternal
+        %td= link_to 'Show', student_program_professor
+        %td= link_to 'Edit', edit_student_program_professor_path(student_program_professor,student_program_id: @student_program.id)
+        %td= link_to 'Delete', student_program_professor, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+%h4 Commitee
+%table.table
+  %thead
+    %tr
+      %th Professor
+      %th Isprimary
+      %th Additiondate
+      %th Isexternal
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_professors.where(isDefenseCommitee: true).each do |student_program_professor|
+      %tr
+        %td= student_program_professor.professor.user.name
+        %td= student_program_professor.isPrimary
+        %td= student_program_professor.additionDate
+        %td= student_program_professor.isExternal
+        %td= link_to 'Show', student_program_professor
+        %td= link_to 'Edit', edit_student_program_professor_path(student_program_professor,student_program_id: @student_program.id)
+        %td= link_to 'Delete', student_program_professor, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student program professor', new_student_program_professor_path(student_program_id: @student_program.id)

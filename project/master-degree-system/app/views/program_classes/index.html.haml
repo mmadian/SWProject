@@ -18,7 +18,7 @@
         %td= program_class.numberOfCourses
         %td= link_to 'Show', program_class
         %td= link_to 'Edit', edit_program_class_path(program_class)
-        %td= link_to 'Destroy', program_class, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', program_class, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 %div{style: "float: right;padding-right: 38px;"}
   = link_to 'Add', new_program_class_path

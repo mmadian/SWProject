@@ -1,4 +1,4 @@
-= form_for(@student_sci_degree_grade) do |f|
+= form_for(@student_sci_degree_grade, url: (@student_sci_degree_grade.new_record? ? student_sci_degree_student_sci_degree_grades_path(student_sci_degree_id: params[:student_sci_degree_id]) : student_sci_degree_student_sci_degree_grade_path(student_sci_degree_id: params[:student_sci_degree_id]))) do |f|
   - if @student_sci_degree_grade.errors.any?
     #error_explanation
       %h2

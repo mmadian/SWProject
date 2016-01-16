@@ -14,8 +14,8 @@
         %td= student_sci_degree_grade.name
         %td= student_sci_degree_grade.year
         %td= student_sci_degree_grade.grade
-        %td= link_to 'Show', student_sci_degree_grade
-        %td= link_to 'Edit', edit_student_sci_degree_grade_path(student_sci_degree_grade)
-        %td= link_to 'Destroy', student_sci_degree_grade, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', [@student_sci_degree,student_sci_degree_grade]
+        %td= link_to 'Edit', edit_student_sci_degree_student_sci_degree_grade_path(@student_sci_degree,student_sci_degree_grade)
+        %td= link_to 'Delete', [@student_sci_degree,student_sci_degree_grade], method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'Add Student scientific degree grade', new_student_sci_degree_student_sci_degree_grade_path(@student_sci_degree)

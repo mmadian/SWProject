@@ -1,25 +1,21 @@
-%h1 Listing program_class_statuses
-%table
+%h1 Program Class Statuses
+%table.table
   %thead
     %tr
       %th Programclass
       %th Preprogramclass
       %th Status
-      %th Creator
-      %th Modifier
       %th
       %th
       %th
   %tbody
     - @program_class_statuses.each do |program_class_status|
       %tr
-        %td= program_class_status.programClass
-        %td= program_class_status.preProgramClass
+        %td= program_class_status.programClass.name
+        %td= program_class_status.preProgramClass.try(:name)
         %td= program_class_status.status
-        %td= program_class_status.creator
-        %td= program_class_status.modifier
         %td= link_to 'Show', program_class_status
         %td= link_to 'Edit', edit_program_class_status_path(program_class_status)
-        %td= link_to 'Destroy', program_class_status, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', program_class_status, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Program class status', new_program_class_status_path

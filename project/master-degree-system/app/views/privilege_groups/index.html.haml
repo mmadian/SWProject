@@ -1,10 +1,8 @@
-%h1 Listing privilege_groups
-%table
+%h1 Privilege Groups
+%table.table
   %thead
     %tr
       %th Name
-      %th Creator
-      %th Modifier
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @privilege_groups.each do |privilege_group|
       %tr
         %td= privilege_group.name
-        %td= privilege_group.creator
-        %td= privilege_group.modifier
         %td= link_to 'Show', privilege_group
         %td= link_to 'Edit', edit_privilege_group_path(privilege_group)
-        %td= link_to 'Destroy', privilege_group, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', privilege_group, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Privilege group', new_privilege_group_path

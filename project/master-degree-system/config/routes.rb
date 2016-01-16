@@ -1,4 +1,6 @@
 MasterDegreeSystem::Application.routes.draw do
+  get "home/others"
+  get "home/index"
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
   
   # resources :student_sci_degree_grades
@@ -73,7 +75,8 @@ MasterDegreeSystem::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get  'others' => 'home#others'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

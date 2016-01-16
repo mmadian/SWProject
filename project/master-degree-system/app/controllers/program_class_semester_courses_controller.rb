@@ -27,7 +27,7 @@ class ProgramClassSemesterCoursesController < ApplicationController
   def create
     @program_class_semester_course = ProgramClassSemesterCourse.new(program_class_semester_course_params)
     @program_class_semester_course.save
-    user=Professor.where(user_id: [3,4]).index_by(&:user_id) 
+    user=Professor.where(user_id: params['professor']).index_by(&:user_id) 
     params['professor'].each do |professor_id|
       ProfessorProgramClassCourse.create(professor_id: user[professor_id.to_i].id, programClassSemesterCourse_id: @program_class_semester_course.id, creator_id: current_user.id)
     end

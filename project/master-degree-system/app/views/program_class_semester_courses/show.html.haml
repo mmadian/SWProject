@@ -7,16 +7,16 @@
   = @program_class_semester_course.minimamNumberOfStudent
 %p
   %strong Course:
-  = @program_class_semester_course.course.CourseName
+  = @program_class_semester_course.course.try(:CourseName)
 %p
   %strong Semester:
-  = @program_class_semester_course.semester.semesterName
+  = @program_class_semester_course.semester.try(:semesterName)
 %p
   %strong Courseclass:
-  = @program_class_semester_course.CourseClass.courseClassName
+  = @program_class_semester_course.CourseClass.try(:courseClassName)
 %p
   %strong Programclass:
-  = @program_class_semester_course.ProgramClass.name
+  = @program_class_semester_course.ProgramClass.try(:name)
 %p
   %strong Year:
   = @program_class_semester_course.year

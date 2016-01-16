@@ -23,17 +23,17 @@ class StudentProgramCoursesController < ApplicationController
   def create
     @student_program_course = StudentProgramCourse.new(student_program_course_params)
     @student_program_course.save
-    respond_with(@student_program_course)
+    respond_with(StudentProgram.find(params["student_program_id"]))
   end
 
   def update
     @student_program_course.update(student_program_course_params)
-    respond_with(@student_program_course)
+    respond_with(StudentProgram.find(params["student_program_id"]))
   end
 
   def destroy
     @student_program_course.destroy
-    respond_with(@student_program_course)
+    respond_with(StudentProgram.find(params["student_program_id"]))
   end
 
   private

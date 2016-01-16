@@ -1,10 +1,8 @@
-%h1 Listing sci_degree_classes
-%table
+%h1 Scientific Degree Class
+%table.table
   %thead
     %tr
       %th Name
-      %th Creator
-      %th Modifier
       %th
       %th
       %th
@@ -12,10 +10,8 @@
     - @sci_degree_classes.each do |sci_degree_class|
       %tr
         %td= sci_degree_class.name
-        %td= sci_degree_class.creator
-        %td= sci_degree_class.modifier
         %td= link_to 'Show', sci_degree_class
         %td= link_to 'Edit', edit_sci_degree_class_path(sci_degree_class)
-        %td= link_to 'Destroy', sci_degree_class, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', sci_degree_class, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Sci degree class', new_sci_degree_class_path

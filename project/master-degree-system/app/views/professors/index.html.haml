@@ -20,6 +20,6 @@
         %td= professor.email
         %td= link_to 'Show', professor
         %td= link_to 'Edit', edit_user_path(professor)
-        %td= link_to 'Destroy', professor, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', professor, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Professor', new_user_path

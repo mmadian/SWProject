@@ -8,19 +8,17 @@
         - @student_program_professor.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :studentProgram
-    %br/
-    = f.text_field :studentProgram
+    = f.hidden_field :studentProgram_id, value: params[:student_program_id]
   .field
     = f.label :professor
     %br/
-    = f.text_field :professor
+    = f.select :professor_id, Professor.includes(:user).map{|p| [p.user.name,p.id]}
   .field
-    = f.label :isPrimary
+    = f.label :is_Primary
     %br/
     = f.check_box :isPrimary
   .field
-    = f.label :isDefenseCommitee
+    = f.label :is_Defense_Commitee
     %br/
     = f.check_box :isDefenseCommitee
   .field
@@ -28,44 +26,36 @@
     %br/
     = f.text_area :comment
   .field
-    = f.label :additionDate
+    = f.label :addition_Date
     %br/
     = f.date_select :additionDate
   .field
-    = f.label :isAccepted
+    = f.label :is_Accepted
     %br/
     = f.check_box :isAccepted
   .field
-    = f.label :acceptanceDate
+    = f.label :acceptance_Date
     %br/
     = f.date_select :acceptanceDate
   .field
-    = f.label :isExternal
+    = f.label :is_External
     %br/
     = f.check_box :isExternal
   .field
-    = f.label :hasReceivedIndivdualReport
+    = f.label :has_Received_Indivdual_Report
     %br/
     = f.check_box :hasReceivedIndivdualReport
   .field
-    = f.label :hasReceivedCollectiveReport
+    = f.label :has_Received_Collective_Report
     %br/
     = f.check_box :hasReceivedCollectiveReport
   .field
-    = f.label :hasReceivedSatisfactionReport
+    = f.label :has_Received_Satisfaction_Report
     %br/
     = f.check_box :hasReceivedSatisfactionReport
   .field
-    = f.label :isCommitteeHead
+    = f.label :is_Committee_Head
     %br/
     = f.check_box :isCommitteeHead
-  .field
-    = f.label :creator
-    %br/
-    = f.text_field :creator
-  .field
-    = f.label :modifier
-    %br/
-    = f.text_field :modifier
   .actions
     = f.submit

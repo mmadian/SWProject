@@ -18,8 +18,8 @@
         %td= student.mobileNumber
         %td= student.phoneNumber
         %td= student.email
-        %td= link_to 'Show', student_path(student)
-        %td= link_to 'Edit', edit_user_path(student)
-        %td= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', student_path(student, :show_only => "true")
+        %td= link_to 'Edit', student_path(student)
+        %td= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Student', new_user_path

@@ -1,0 +1,19 @@
+%h4 Warning
+%table.table
+  %thead
+    %tr
+      %th Warning
+      %th Date
+      %th
+      %th
+      %th
+  %tbody
+    - @student_program_warning_histories.each do |student_program_warning_history|
+      %tr
+        %td= student_program_warning_history.warning
+        %td= student_program_warning_history.date
+        %td= link_to 'Show', student_program_warning_history
+        %td= link_to 'Edit', edit_student_program_warning_history_path(student_program_warning_history)
+        %td= link_to 'Delete', student_program_warning_history, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Warning', new_student_program_warning_history_path(student_program_id: @student_program.id)

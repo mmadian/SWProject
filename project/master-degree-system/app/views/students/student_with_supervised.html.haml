@@ -1,0 +1,20 @@
+%h1 Supervised Student
+
+%table.table
+  %thead
+    %tr
+      %th National ID
+      %th Name
+      %th Mobilenumber
+      %th Phonenumber
+      %th Email
+      %th
+  %tbody
+    - @students.each do |student|
+      %tr
+        %td= student.nationalID
+        %td= student.name
+        %td= student.mobileNumber
+        %td= student.phoneNumber
+        %td= student.email
+        %td= link_to 'Show', student_path(student, :show_only => "true")

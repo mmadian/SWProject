@@ -1,0 +1,52 @@
+%h4 Course Details
+%table.table
+  %thead
+    %tr
+      = search_form_for @search, url: request.url, method: :get do |f|
+        %th
+          %label
+            Program
+          %p
+            = f.select :ProgramClass_id_eq, ProgramClass.all.map{|s| [s.name,s.id]} , {include_blank: 'Please Select'}
+        %th
+          %label
+            Semester
+          %p
+            = f.select :semester_id_eq, Semester.all.map{|s| [s.semesterName,s.id]}, {include_blank: 'Please Select'}
+        %th
+          %label
+            Year
+          %p
+            = f.text_field :year_eq
+        %th
+          %p
+            = f.submit 'Search'
+  %thead
+    %tr
+      %th Program class
+      %th Semester
+      %th Year
+      %th Courseclass
+      %th Course
+      %th Specific course name
+      %th Minimam number of student
+      %th Directed reading
+      %th Coursecode
+      %th
+      %th
+      %th
+  %tbody
+    - @program_class_semester_course.each do |program_class_semester_course|
+      %tr
+        %td= program_class_semester_course.ProgramClass.try(:name)
+        %td= program_class_semester_course.semester.try(:semesterName)
+        %td= program_class_semester_course.year
+        %td= program_class_semester_course.CourseClass.try(:courseClassName)
+        %td= program_class_semester_course.course.try(:CourseName)
+        %td= program_class_semester_course.specificCourseName
+        %td= program_class_semester_course.minimamNumberOfStudent
+        %td= program_class_semester_course.directedReading
+        %td= program_class_semester_course.courseCode
+        %td= link_to 'Show', program_class_semester_course
+        %td= link_to 'Edit', edit_program_class_semester_course_path(program_class_semester_course,program_class: program_class_semester_course.ProgramClass.try(:name))
+        %td= link_to 'Delete', program_class_semester_course, method: :delete, data: { confirm: 'Are you sure?' }

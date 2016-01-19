@@ -1,16 +1,19 @@
+
+%p
+  %strong Professor Title:
+  = @professor.professorTitle || "Prof."
  
 %p
-  %strong User:
-  = @professor.user
+  %strong Name:
+  = @professor.user.name
+
+%h4 
+  %strong Professors Reports
 %p
-  %strong Professortitle:
-  = @professor.professorTitle
+  = link_to 'Show Student Has No Report', student_listing_no_report_students_path(professor_id: @professor.id)
 %p
-  %strong Creator:
-  = @professor.creator
-%p
-  %strong Modifier:
-  = @professor.modifier
+  = link_to 'Supervised Student', student_with_supervised_students_path(professor_id: @professor.id)
+
 = link_to 'Edit', edit_professor_path(@professor)
 |
 / = link_to 'Back', professors_path

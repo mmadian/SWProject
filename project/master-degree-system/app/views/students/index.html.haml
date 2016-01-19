@@ -2,6 +2,36 @@
 %table.table
   %thead
     %tr
+      = search_form_for @search, url: request.url, method: :get do |f|
+        %th
+          %label
+            National ID
+          %p
+            = f.text_field :nationalID_cont
+        %th
+          %label
+            Name
+          %p
+            = f.text_field :name_cont
+        %th
+          %label
+            Program
+          %p
+            = select_tag "qq[programClass_id_eq]", options_from_collection_for_select(ProgramClass.all,'id','name',params[:qq][:programClass_id_eq]), prompt: "Please Select"
+        %th
+          %label
+            Semester
+          %p
+            = select_tag "qq[semester_id_eq]", options_from_collection_for_select(Semester.all,'id','semesterName',params[:qq][:semester_id_eq]), prompt: "Please Select"
+        %th
+          %label
+            Year
+          %p
+            = text_field_tag 'qq[year_eq]',params[:qq][:year_eq]
+        %th
+          %p
+            = f.submit 'Search'
+    %tr
       %th National ID
       %th Name
       %th Mobilenumber

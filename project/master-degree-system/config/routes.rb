@@ -1,5 +1,6 @@
 MasterDegreeSystem::Application.routes.draw do
   get "home/others"
+  get "home/reports"
   get "home/index"
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
   
@@ -49,7 +50,13 @@ MasterDegreeSystem::Application.routes.draw do
     resources :student_program_courses
   end
 
-  resources :students
+  resources :students do
+    collection do
+      get :student_listing_no_report
+      get :student_with_supervised
+      get :old_student
+    end
+  end
 
   resources :professor_program_class_courses
 
@@ -63,7 +70,11 @@ MasterDegreeSystem::Application.routes.draw do
 
   resources :program_class_semester_courses
 
-  resources :program_classes
+  resources :program_classes do
+    collection do
+      get :course_details
+    end
+  end
 
   resources :semesters
 

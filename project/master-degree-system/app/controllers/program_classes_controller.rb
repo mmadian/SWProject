@@ -8,6 +8,12 @@ class ProgramClassesController < ApplicationController
     respond_with(@program_classes)
   end
 
+  def course_details
+    params[:q] ||= {}
+    @search = ProgramClassSemesterCourse.search(params[:q])
+    @program_class_semester_course = @search.result
+  end
+
   def show
     params[:q] ||= {}
     @search = ProgramClassSemesterCourse.where(ProgramClass_id: @program_class.id).search(params[:q])

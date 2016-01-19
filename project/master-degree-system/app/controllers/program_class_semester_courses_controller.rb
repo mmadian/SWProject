@@ -13,6 +13,12 @@ class ProgramClassSemesterCoursesController < ApplicationController
   end
 
   def show
+    student_program = StudentProgramCourse.where(programClassSemesterCourse_id: @program_class_semester_course.id).map(&:studentProgram)
+    professor_ids = StudentProgramProfessor.where(studentProgram_id: student_program.map(&:id)).map(&:professor_id)
+    student_ids = student_program.map(&:student_id)
+    @number_of_student = student_ids.length
+    @students = User.where(id: student_ids)
+    @professors = User.where(id: professor_ids)
     respond_with(@program_class_semester_course)
   end
 

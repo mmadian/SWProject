@@ -38,7 +38,7 @@ class ProfessorsController < ApplicationController
 
   private
     def set_professor
-      @professor = Professor.find(params[:id])
+      @professor = Professor.find_by(user_id: params[:id])
     end
 
     def professor_params

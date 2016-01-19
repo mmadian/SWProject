@@ -18,7 +18,7 @@
         %td= professor.mobileNumber
         %td= professor.phoneNumber
         %td= professor.email
-        %td= link_to 'Show', professor
+        %td= link_to 'Show', professor_path(professor)
         %td= link_to 'Edit', edit_user_path(professor)
         %td= link_to 'Delete', professor, method: :delete, data: { confirm: 'Are you sure?' }
 %br/

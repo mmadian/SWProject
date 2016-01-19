@@ -1,9 +1,9 @@
  
 %p
-  %strong Specificcoursename:
+  %strong Specific course name:
   = @program_class_semester_course.specificCourseName
 %p
-  %strong Minimamnumberofstudent:
+  %strong Minimam number of student:
   = @program_class_semester_course.minimamNumberOfStudent
 %p
   %strong Course:
@@ -12,10 +12,10 @@
   %strong Semester:
   = @program_class_semester_course.semester.try(:semesterName)
 %p
-  %strong Courseclass:
+  %strong Course class:
   = @program_class_semester_course.CourseClass.try(:courseClassName)
 %p
-  %strong Programclass:
+  %strong Program class:
   = @program_class_semester_course.ProgramClass.try(:name)
 %p
   %strong Year:
@@ -26,12 +26,57 @@
 %p
   %strong Coursecode:
   = @program_class_semester_course.courseCode
+
 %p
-  %strong Creator:
-  = @program_class_semester_course.creator
-%p
-  %strong Modifier:
-  = @program_class_semester_course.modifier
+  %strong Number Of Register
+  = @number_of_student
+
+%h4 Professor
+%table.table
+  %thead
+    %tr
+      %th National ID
+      %th Name
+      %th Mobilenumber
+      %th Phonenumber
+      %th Email
+      %th
+      %th
+      %th
+  %tbody
+    - @professors.each do |professor|
+      %tr
+        %td= professor.nationalID
+        %td= professor.name
+        %td= professor.mobileNumber
+        %td= professor.phoneNumber
+        %td= professor.email
+        %td= link_to 'Show', professor_path(professor)
+        %td= link_to 'Edit', edit_user_path(professor)
+        %td= link_to 'Delete', professor, method: :delete, data: { confirm: 'Are you sure?' }
+
+%h4 Students
+%table.table
+  %thead
+    %tr
+      %th National ID
+      %th Name
+      %th Mobilenumber
+      %th Phonenumber
+      %th Email
+      %th
+      %th
+      %th
+  %tbody
+    - @students.each do |student|
+      %tr
+        %td= student.nationalID
+        %td= student.name
+        %td= student.mobileNumber
+        %td= student.phoneNumber
+        %td= student.email
+        %td= link_to 'Show', student_path(student, :show_only => "true")
+        %td= link_to 'Edit', student_path(student)
+        %td= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }
+
 = link_to 'Edit', edit_program_class_semester_course_path(@program_class_semester_course)
-|
-/ = link_to 'Back', program_class_semester_courses_path

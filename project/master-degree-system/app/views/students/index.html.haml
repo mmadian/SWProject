@@ -7,12 +7,12 @@
           %label
             National ID
           %p
-            = f.text_field :nationalID_cont
+            = f.text_field :user_nationalID_cont
         %th
           %label
             Name
           %p
-            = f.text_field :name_cont
+            = f.text_field :user_name_cont
         %th
           %label
             Program
@@ -27,7 +27,7 @@
           %label
             Year
           %p
-            = text_field_tag 'qq[year_eq]',params[:qq][:year_eq]
+            = text_field_tag 'qq[year]',params[:qq][:year]
         %th
           %p
             = f.submit 'Search'
@@ -43,11 +43,11 @@
   %tbody
     - @students.each do |student|
       %tr
-        %td= student.nationalID
-        %td= student.name
-        %td= student.mobileNumber
-        %td= student.phoneNumber
-        %td= student.email
+        %td= student.user.nationalID
+        %td= student.user.name
+        %td= student.user.mobileNumber
+        %td= student.user.phoneNumber
+        %td= student.user.email
         %td= link_to 'Show', student_path(student, :show_only => "true")
         %td= link_to 'Edit', student_path(student)
         %td= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }

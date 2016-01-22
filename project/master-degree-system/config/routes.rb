@@ -2,7 +2,7 @@ MasterDegreeSystem::Application.routes.draw do
   get "home/others"
   get "home/reports"
   get "home/index"
-  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
+  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }, module: :devise
   
   # resources :student_sci_degree_grades
 

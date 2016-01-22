@@ -32,6 +32,7 @@ class StudentProgramsController < ApplicationController
 
   def create
     @student_program = StudentProgram.new(student_program_params)
+    @student_program.student_id = Student.find_by(user_id:@student_program.student_id).id
     @student_program.save
     respond_with(@student_program)
   end
@@ -52,6 +53,6 @@ class StudentProgramsController < ApplicationController
     end
 
     def student_program_params
-      params.require(:student_program).permit(:student_id, :ProgramClass_id, :finishedToefl, :toeflDate, :hasResearchPoint, :puplishedAPaper, :programStartDate, :isVTMENAprogram, :creator_id, :modifier_id)
+      params.require(:student_program).permit(:student_id, :ProgramClass_id, :finishedToefl, :toeflDate, :hasResearchPoint, :puplishedAPaper, :programStartDate, :isVTMENAprogram, :creator_id, :modifier_id, :semester_id)
     end
 end

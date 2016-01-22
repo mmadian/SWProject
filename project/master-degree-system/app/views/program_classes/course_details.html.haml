@@ -33,8 +33,6 @@
       %th Directed reading
       %th Coursecode
       %th
-      %th
-      %th
   %tbody
     - @program_class_semester_course.each do |program_class_semester_course|
       %tr
@@ -48,5 +46,3 @@
         %td= program_class_semester_course.directedReading
         %td= program_class_semester_course.courseCode
         %td= link_to 'Show', program_class_semester_course
-        %td= link_to 'Edit', edit_program_class_semester_course_path(program_class_semester_course,program_class: program_class_semester_course.ProgramClass.try(:name))
-        %td= link_to 'Delete', program_class_semester_course, method: :delete, data: { confirm: 'Are you sure?' }

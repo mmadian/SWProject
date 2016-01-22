@@ -22,8 +22,11 @@ class StudentProgramCoursesController < ApplicationController
 
   def create
     @student_program_course = StudentProgramCourse.new(student_program_course_params)
-    @student_program_course.save
-    respond_with(StudentProgram.find(params["student_program_id"]))
+    if @student_program_course.save
+      respond_with(StudentProgram.find(params["student_program_id"]))
+    else
+      render :edit
+    end
   end
 
   def update

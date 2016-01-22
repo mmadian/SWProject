@@ -54,7 +54,7 @@
   .field
     = label_tag :professor
     %br/
-    = select_tag 'professor[]', options_from_collection_for_select(User.where(id: Professor.all.pluck(:user_id)).all,'id','name'),multiple: :multiple
+    = select_tag 'professor[]', options_from_collection_for_select(User.where(id: Professor.all.pluck(:user_id)).all,'id','name',params['professor']), multiple: :multiple
   .field.hidden
     = f.hidden_field :creator
   .field.hidden

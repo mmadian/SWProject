@@ -4,18 +4,18 @@ class StudentsController < ApplicationController
   respond_to :html
 
   def student_listing_no_report
-    student_indiv_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],hasReceivedIndivdualReport: false).map(&:studentProgram).map(&:student_id).uniq
-    student_collect_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],hasReceivedCollectiveReport: false).map(&:studentProgram).map(&:student_id).uniq
-    student_satis_ids = StudentProgramProfessor.where(professor_id: params[:professor_id], hasReceivedSatisfactionReport: false).map(&:studentProgram).map(&:student_id).uniq
-    @students_with_no_indivdual = User.find(student_indiv_ids)
-    @students_with_no_collective = User.find(student_collect_ids)
-    @students_with_no_satisfaction = User.find(student_satis_ids)
+    student_indiv_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],isDefenseCommitee: true,hasReceivedIndivdualReport: false).map(&:studentProgram).map(&:student_id).uniq
+    student_collect_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],isDefenseCommitee: true,hasReceivedCollectiveReport: false).map(&:studentProgram).map(&:student_id).uniq
+    student_satis_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],isDefenseCommitee: true, hasReceivedSatisfactionReport: false).map(&:studentProgram).map(&:student_id).uniq
+    @students_with_no_indivdual = Student.find(student_indiv_ids)
+    @students_with_no_collective = Student.find(student_collect_ids)
+    @students_with_no_satisfaction = Student.find(student_satis_ids)
 
   end
 
   def student_with_supervised
-    student_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],isPrimary: true).map(&:studentProgram).map(&:student_id).uniq
-    @students = User.find(student_ids)
+    student_ids = StudentProgramProfessor.where(professor_id: params[:professor_id],isDefenseCommitee: true).map(&:studentProgram).map(&:student_id).uniq
+    @students = Student.find(student_ids)
   end
 
   def old_student
@@ -25,12 +25,13 @@ class StudentsController < ApplicationController
   def index
     params[:qq] ||= {}
     if params[:qq].values.reject{|v| !v.present?} != []
-      program_class_sem_cour_ids = ProgramClassSemesterCourse.search(params[:qq]).result.pluck(:id)
-      student_prog_cour_ids = StudentProgramCourse.where(programClassSemesterCourse_id: program_class_sem_cour_ids).pluck(:studentProgram_id)
-      student_ids = StudentProgram.where(id: student_prog_cour_ids).pluck(:student_id)
+      params[:qq][:programStartDate_gteq] = Date.parse("1-1-"+params[:qq][:year])
+      params[:qq][:programStartDate_lteq] = params[:qq][:programStartDate_gteq].end_of_year()
+      student_ids = StudentProgram.search(params[:qq]).result.pluck(:student_id)
+      @search = Student.where(id: student_ids).search(params[:q])
+    else
+      @search = Student.search(params[:q])
     end
-
-    @search = User.where(id: student_ids || Student.all.pluck(:user_id)).search(params[:q])
     @students = @search.result
     respond_with(@students)
   end
@@ -67,7 +68,7 @@ class StudentsController < ApplicationController
 
   private
     def set_student
-      @student = User.find(params[:id])
+      @student = Student.find(params[:id])
     end
 
     def student_params

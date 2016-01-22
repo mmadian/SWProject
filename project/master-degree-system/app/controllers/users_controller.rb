@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    @user.update(user_params.reject{|k,v| v.blank?})
     respond_with(@user)
   end
 

@@ -12,9 +12,9 @@
   %tbody
     - @students.each do |student|
       %tr
-        %td= student.nationalID
-        %td= student.name
-        %td= student.mobileNumber
-        %td= student.phoneNumber
-        %td= student.email
+        %td= student.user.nationalID
+        %td= student.user.name
+        %td= student.user.mobileNumber
+        %td= student.user.phoneNumber
+        %td= student.user.email
         %td= link_to 'Show', student_path(student, :show_only => "true")

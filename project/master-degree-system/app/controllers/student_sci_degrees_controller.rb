@@ -23,6 +23,7 @@ class StudentSciDegreesController < ApplicationController
 
   def create
     @student_sci_degree = StudentSciDegree.new(student_sci_degree_params)
+    @student_sci_degree.student_id = Student.find_by(user_id: @student_sci_degree.student_id).id
     @student_sci_degree.save
     respond_with(@student_sci_degree)
   end

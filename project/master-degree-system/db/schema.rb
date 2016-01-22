@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116160652) do
+ActiveRecord::Schema.define(version: 20160120200218) do
 
   create_table "course_classes", force: true do |t|
     t.string   "courseClassName"
@@ -334,11 +334,13 @@ ActiveRecord::Schema.define(version: 20160116160652) do
     t.integer  "modifier_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "semester_id"
   end
 
   add_index "student_programs", ["ProgramClass_id"], name: "index_student_programs_on_ProgramClass_id", using: :btree
   add_index "student_programs", ["creator_id"], name: "index_student_programs_on_creator_id", using: :btree
   add_index "student_programs", ["modifier_id"], name: "index_student_programs_on_modifier_id", using: :btree
+  add_index "student_programs", ["semester_id"], name: "index_student_programs_on_semester_id", using: :btree
   add_index "student_programs", ["student_id"], name: "index_student_programs_on_student_id", using: :btree
 
   create_table "student_sci_degree_grades", force: true do |t|

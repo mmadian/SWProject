@@ -1,7 +1,7 @@
  
 %p
   %strong Student:
-  = User.find(@student_program.student_id).name
+  = @student_program.student.user.name
 %p
   %strong Program class:
   = @student_program.ProgramClass.name

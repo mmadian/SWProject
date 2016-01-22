@@ -13,11 +13,11 @@
   %tbody
     - @students_with_no_indivdual.each do |student|
       %tr
-        %td= student.nationalID
-        %td= student.name
-        %td= student.mobileNumber
-        %td= student.phoneNumber
-        %td= student.email
+        %td= student.user.nationalID
+        %td= student.user.name
+        %td= student.user.mobileNumber
+        %td= student.user.phoneNumber
+        %td= student.user.email
         %td= link_to 'Show', student_path(student, :show_only => "true")
 
 %h4 Students has no Received Collective Report
@@ -33,11 +33,11 @@
   %tbody
     - @students_with_no_collective.each do |student|
       %tr
-        %td= student.nationalID
-        %td= student.name
-        %td= student.mobileNumber
-        %td= student.phoneNumber
-        %td= student.email
+        %td= student.user.nationalID
+        %td= student.user.name
+        %td= student.user.mobileNumber
+        %td= student.user.phoneNumber
+        %td= student.user.email
         %td= link_to 'Show', student_path(student, :show_only => "true")
 
 %h4 Students has no Received Satisfaction Report
@@ -53,9 +53,9 @@
   %tbody
     - @students_with_no_satisfaction.each do |student|
       %tr
-        %td= student.nationalID
-        %td= student.name
-        %td= student.mobileNumber
-        %td= student.phoneNumber
-        %td= student.email
+        %td= student.user.nationalID
+        %td= student.user.name
+        %td= student.user.mobileNumber
+        %td= student.user.phoneNumber
+        %td= student.user.email
         %td= link_to 'Show', student_path(student, :show_only => "true")

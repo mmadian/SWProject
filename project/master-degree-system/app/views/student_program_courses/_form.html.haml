@@ -36,8 +36,8 @@
     = f.label :gradeClass, 'Student Grade Class'
     %br/
     = f.select :gradeClass_id, GradeClass.all.map{|g| [g.name,g.id]}
-  .field.hide
-    = f.label :subscriptionDate
+  .field
+    = f.label :subscription_Date
     %br/
     = f.date_select :subscriptionDate
   

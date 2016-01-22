@@ -1,22 +1,22 @@
  
 %p
   %strong National ID:
-  = @student.nationalID
+  = @student.user.nationalID
 %p
   %strong Name:
-  = @student.name
+  = @student.user.name
 %p
   %strong Image url:
-  = @student.imageURL
+  = @student.user.imageURL
 %p
   %strong Mobile number:
-  = @student.mobileNumber
+  = @student.user.mobileNumber
 %p
   %strong Phone number:
-  = @student.phoneNumber
+  = @student.user.phoneNumber
 %p
   %strong Email:
-  = @student.email
+  = @student.user.email
 
 %hr
 = render 'student_sci_degrees/index'

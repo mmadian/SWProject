@@ -4,7 +4,7 @@
   = @student_sci_degree.SciDegreeClass.name
 %p
   %strong Student:
-  = User.find(@student_sci_degree.student_id).name
+  = @student_sci_degree.student.user.name
 %p
   %strong University:
   = @student_sci_degree.university.name
@@ -24,7 +24,6 @@
   %strong Gpa:
   = @student_sci_degree.gpa
 = link_to 'Edit', edit_student_sci_degree_path(@student_sci_degree)
-|
 / = link_to 'Back', student_sci_degrees_path
 
 = render 'student_sci_degree_grades/index'

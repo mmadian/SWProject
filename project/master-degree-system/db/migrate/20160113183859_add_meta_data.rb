@@ -41,5 +41,6 @@ class AddMetaData < ActiveRecord::Migration
     University.create!(name: "Alexandria University")
     Faculty.create!(name: "Faculty of Engineering")
     Department.create!(name: "Computer and system department")
-  end
+    User.create!(email: "admin@root.com",password: "123456",password_confirmation:"123456")
+    end
 end

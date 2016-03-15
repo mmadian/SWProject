@@ -438,6 +438,7 @@ ActiveRecord::Schema.define(version: 20160120200218) do
     t.string   "imageURL"
     t.string   "mobileNumber"
     t.string   "phoneNumber"
+    t.string   "password"
     t.integer  "creator_id"
     t.integer  "modifier_id"
     t.datetime "created_at"
